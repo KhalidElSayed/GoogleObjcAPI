@@ -1,0 +1,13 @@
+K 13
+svn:externals
+V 189
+HTTPFetcher http://gtm-http-fetcher.googlecode.com/svn/trunk/Source
+OAuth2 http://gtm-oauth2.googlecode.com/svn/trunk/Source
+JSON http://json-framework.googlecode.com/svn/tags/2.1.1/Source
+
+K 10
+svn:ignore
+V 6
+build
+
+END
