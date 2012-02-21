@@ -531,7 +531,7 @@ static Class gSignInClass = Nil;
     }
   } else {
     // request was nil.
-    [self popView];
+    //[self popView];
   }
 }
 
