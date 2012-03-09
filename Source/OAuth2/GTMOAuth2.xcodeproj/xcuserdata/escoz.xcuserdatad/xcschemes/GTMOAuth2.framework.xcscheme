@@ -39,6 +39,15 @@
       allowLocationSimulation = "YES">
       <AdditionalOptions>
       </AdditionalOptions>
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4F724A7012248B19001A4AD0"
+            BuildableName = "GTMOAuth2.framework"
+            BlueprintName = "GTMOAuth2.framework"
+            ReferencedContainer = "container:GTMOAuth2.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       shouldUseLaunchSchemeArgsEnv = "YES"

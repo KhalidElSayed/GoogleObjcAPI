@@ -39,6 +39,15 @@
       allowLocationSimulation = "YES">
       <AdditionalOptions>
       </AdditionalOptions>
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D2AAC07D0554694100DB518D"
+            BuildableName = "libOAuthTouch2.a"
+            BlueprintName = "OAuthTouchStaticLib"
+            ReferencedContainer = "container:GTMOAuth2.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       shouldUseLaunchSchemeArgsEnv = "YES"

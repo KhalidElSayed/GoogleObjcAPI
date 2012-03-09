@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+
 #if !STRIP_GTM_FETCH_LOGGING
 
 #include <sys/stat.h>
@@ -996,6 +999,10 @@ static NSString* gLoggingProcessName = nil;
   return nil;
 }
 
+
+#pragma clang diagnostic pop
+
 @end
 
 #endif // !STRIP_GTM_FETCH_LOGGING
+

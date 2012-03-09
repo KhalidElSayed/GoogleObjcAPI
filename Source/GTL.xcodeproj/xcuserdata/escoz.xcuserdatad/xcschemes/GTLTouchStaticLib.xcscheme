@@ -39,6 +39,15 @@
       allowLocationSimulation = "YES">
       <AdditionalOptions>
       </AdditionalOptions>
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4F1C6E0E1027B3CE00B46459"
+            BuildableName = "libGTLTouchStaticLib.a"
+            BlueprintName = "GTLTouchStaticLib"
+            ReferencedContainer = "container:GTL.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       shouldUseLaunchSchemeArgsEnv = "YES"

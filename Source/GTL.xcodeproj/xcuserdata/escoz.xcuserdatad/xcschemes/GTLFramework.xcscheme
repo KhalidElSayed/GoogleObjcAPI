@@ -39,6 +39,15 @@
       allowLocationSimulation = "YES">
       <AdditionalOptions>
       </AdditionalOptions>
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4F38F6A50B66E91D00B24B81"
+            BuildableName = "GTL.framework"
+            BlueprintName = "GTLFramework"
+            ReferencedContainer = "container:GTL.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       shouldUseLaunchSchemeArgsEnv = "YES"
