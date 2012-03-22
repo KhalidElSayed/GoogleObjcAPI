@@ -26,8 +26,8 @@ static const NSTimeInterval kDefaultNetworkLossTimeoutInterval = 30.0;
 //
 // http://code.google.com/apis/accounts/docs/OAuth2.html#IA
 //
-NSString *const kOOBString = @"urn:ietf:wg:oauth:2.0:oob";
-
+//NSString *const kOOBString = @"urn:ietf:wg:oauth:2.0:oob";
+NSString *const kOOBString = @"http://localhost";
 
 @interface GTMOAuth2Authentication (InternalMethods)
 - (NSDictionary *)dictionaryWithJSONData:(NSData *)data;
@@ -428,6 +428,11 @@ finishedWithFetcher:(GTMHTTPFetcher *)fetcher
     }
   }
   return NO;
+}
+
+- (void)applicationAuthorized:(NSString *)code {
+    [self.authentication setKeysForResponseDictionary:[NSDictionary dictionaryWithObject:code forKey:@"code"]];
+    [self handleCallbackReached];
 }
 
 - (BOOL)cookiesChanged:(NSHTTPCookieStorage *)cookieStorage {

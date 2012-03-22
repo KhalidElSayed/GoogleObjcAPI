@@ -144,6 +144,9 @@
 
 - (BOOL)requestRedirectedToRequest:(NSURLRequest *)redirectedRequest;
 - (BOOL)titleChanged:(NSString *)title;
+
+- (void)applicationAuthorized:(NSString *)code;
+
 - (BOOL)cookiesChanged:(NSHTTPCookieStorage *)cookieStorage;
 - (BOOL)loadFailedWithError:(NSError *)error;
 

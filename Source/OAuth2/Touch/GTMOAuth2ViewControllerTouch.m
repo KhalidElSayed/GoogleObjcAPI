@@ -33,6 +33,7 @@
 static NSString * const kGTMOAuth2AccountName = @"OAuth";
 static GTMOAuth2Keychain* sDefaultKeychain = nil;
 
+
 @interface GTMOAuth2ViewControllerTouch()
 
 @property (nonatomic, copy) NSURLRequest *request;
@@ -653,6 +654,11 @@ static Class gSignInClass = Nil;
   shouldStartLoadWithRequest:(NSURLRequest *)request
               navigationType:(UIWebViewNavigationType)navigationType {
 
+    NSString *const code = [self getAccessCode:[request.URL absoluteString]];
+    if (code!=nil){
+        [signIn_ applicationAuthorized:code];
+        return NO;
+    }
   if (!hasDoneFinalRedirect_) {
     hasDoneFinalRedirect_ = [signIn_ requestRedirectedToRequest:request];
     if (hasDoneFinalRedirect_) {
@@ -661,6 +667,22 @@ static Class gSignInClass = Nil;
     }
   }
   return YES;
+}
+
+-(NSString *)getAccessCode:(NSString *)urlString {
+    NSError *error;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"code=(.*)" options:0 error:&error];
+    if (regex != nil)
+    {
+        NSTextCheckingResult *firstMatch = [regex firstMatchInString:urlString options:0 range:NSMakeRange(0, [urlString length])];
+        if (firstMatch)
+        {
+            NSRange accessTokenRange = [firstMatch rangeAtIndex:1];
+            NSString *accessToken = [urlString substringWithRange:accessTokenRange];
+            return accessToken;
+        }
+    }
+    return nil;
 }
 
 - (void)updateUI {
@@ -673,9 +695,13 @@ static Class gSignInClass = Nil;
                webView:webView
                   kind:nil];
   [self updateUI];
+
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
   [self notifyWithName:kGTMOAuth2WebViewStoppedLoading
                webView:webView
                   kind:kGTMOAuth2WebViewFinished];
@@ -729,21 +755,12 @@ static Class gSignInClass = Nil;
   }
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  BOOL value = YES;
-  if (!isInsideShouldAutorotateToInterfaceOrientation_) {
-    isInsideShouldAutorotateToInterfaceOrientation_ = YES;
-    UIViewController *navigationController = [self navigationController];
-    if (navigationController != nil) {
-      value = [navigationController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
-    } else {
-      value = [super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
-    }
-    isInsideShouldAutorotateToInterfaceOrientation_ = NO;
-  }
-  return value;
-}
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    if ([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPhone)
+        return toInterfaceOrientation==UIInterfaceOrientationPortrait   ;
+    return [super shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+}
 @end
 
 
