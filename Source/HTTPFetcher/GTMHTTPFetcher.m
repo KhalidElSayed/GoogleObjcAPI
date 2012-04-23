@@ -266,6 +266,10 @@ const NSTimeInterval kDefaultMaxUploadRetryInterval = 60.0 * 10.;
 
     if (postData_) {
       [request_ setHTTPBody:postData_];
+        // !!!!!!!!!!!!!!!!!! EDUARDO
+        // HERE IS WHERE WE CAN LOG THE DATA BEING SENT OUT
+        // NSLog(@"VERB %@", request_.HTTPMethod);
+        // NSLog(@"EDUARDO LOGGER %@", [[NSString alloc ] initWithData:postData_ encoding:NSUTF8StringEncoding]);
     } else {
       if ([self respondsToSelector:@selector(setupStreamLogging)]) {
         [self performSelector:@selector(setupStreamLogging)];

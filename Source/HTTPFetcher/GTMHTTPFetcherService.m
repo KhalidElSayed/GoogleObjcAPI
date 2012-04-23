@@ -142,7 +142,6 @@
   // Entry point from the fetcher
   @synchronized(self) {
     NSString *host = [[[fetcher mutableRequest] URL] host];
-
     if ([host length] == 0) {
 #if DEBUG
       NSAssert1(0, @"%@ lacks host", fetcher);
