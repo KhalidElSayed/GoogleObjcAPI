@@ -1,14 +1,14 @@
 10
 
 dir
-134
+201
 http://google-api-objectivec-client.googlecode.com/svn/trunk/Source/Services/Groupssettings/Generated
 http://google-api-objectivec-client.googlecode.com/svn
 
 
 
-2011-12-16T21:13:04.166932Z
-131
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-11T13:36:38.000000Z
-1021c90b7f48d39a7fd64f7c018e70b6
-2011-11-11T20:30:01.888849Z
-96
+2012-08-20T23:32:40.000000Z
+c39daa47e5202ba4bc84a0c1c8df225d
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -58,7 +58,7 @@ grobbins@google.com
 
 
 
-1047
+1209
 
 GTLGroupssettingsGroups.m
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2012-01-11T13:36:38.000000Z
-0dd293dca19939607701fcfa7ec610b9
-2011-11-11T20:30:01.888849Z
-96
+2012-08-20T23:32:40.000000Z
+7181f1dd2935aba32f7a930a8d428766
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -92,7 +92,7 @@ grobbins@google.com
 
 
 
-1916
+2078
 
 GTLServiceGroupssettings.m
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2012-01-11T13:36:38.000000Z
-b62035ebd188a2d06cd3ebbe69cd9f5b
-2011-12-16T21:13:04.166932Z
-131
+2012-08-20T23:32:40.000000Z
+d6a3e249d90147c4682303d9f82e4d1c
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -126,7 +126,7 @@ grobbins@google.com
 
 
 
-1808
+1970
 
 GTLQueryGroupssettings.h
 file
@@ -134,10 +134,10 @@ file
 
 
 
-2012-01-11T13:36:38.000000Z
-e8b2921df2b497d779303ffdf928fa02
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:40.000000Z
+e36e576ced20dac6e0b24028e3dba5f6
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -160,7 +160,7 @@ grobbins@google.com
 
 
 
-2576
+2738
 
 GTLQueryGroupssettings.m
 file
@@ -168,10 +168,10 @@ file
 
 
 
-2012-01-11T13:36:38.000000Z
-19f16f6b2d822e690c1480bcc5ecbf75
-2011-11-11T20:30:01.888849Z
-96
+2012-08-20T23:32:40.000000Z
+0e1d1eb92723171df7b0bd7ac595d51b
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -194,7 +194,7 @@ grobbins@google.com
 
 
 
-2603
+2765
 
 GTLGroupssettingsConstants.h
 file
@@ -202,10 +202,10 @@ file
 
 
 
-2012-01-11T13:36:38.000000Z
-2025cfb0c41a7e1f731359c343c10bef
-2011-11-11T20:30:01.888849Z
-96
+2012-08-20T23:32:40.000000Z
+1e70358075e40f5bac088f7d52fbda76
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -228,7 +228,7 @@ grobbins@google.com
 
 
 
-1204
+1366
 
 GTLGroupssettings.h
 file
@@ -236,10 +236,10 @@ file
 
 
 
-2012-01-11T13:36:38.000000Z
-7aa3e2042ddb65ce4602692365d89197
-2011-11-11T20:30:01.888849Z
-96
+2012-08-20T23:32:40.000000Z
+850580472e506fe5e492790d93b8358b
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -262,7 +262,7 @@ grobbins@google.com
 
 
 
-1002
+1164
 
 GTLGroupssettingsGroups.h
 file
@@ -270,10 +270,10 @@ file
 
 
 
-2012-01-11T13:36:38.000000Z
-d45ea08f2bce7179feda15f393b28f07
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:40.000000Z
+01c08dda1172a078a6d2fa6a477719c6
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -296,7 +296,7 @@ grobbins@google.com
 
 
 
-4125
+4304
 
 GTLServiceGroupssettings.h
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2012-01-11T13:36:38.000000Z
-ced73402634c8c46aae7c5068e5179c6
-2011-11-11T20:30:01.888849Z
-96
+2012-08-20T23:32:40.000000Z
+6ab01ad5ec917fe8ef95fd91b42862db
+2012-07-28T01:02:22.137373Z
+194
 grobbins@google.com
 
 
@@ -330,5 +330,5 @@ grobbins@google.com
 
 
 
-2019
+2181
 

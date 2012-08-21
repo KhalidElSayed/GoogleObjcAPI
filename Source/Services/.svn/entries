@@ -1,14 +1,14 @@
 10
 
 dir
-134
+201
 http://google-api-objectivec-client.googlecode.com/svn/trunk/Source/Services
 http://google-api-objectivec-client.googlecode.com/svn
 
 
 
-2011-12-23T01:30:55.588692Z
-133
+2012-08-11T03:10:15.515419Z
+201
 grobbins@google.com
 
 
@@ -26,9 +26,6 @@ grobbins@google.com
 
 052f66bb-8366-e9ed-b056-95094e25c79e
 
-Groupssettings
-dir
-
 Blogger
 dir
 
@@ -36,9 +33,6 @@ Adsense
 dir
 
 Plus
-dir
-
-Orkut
 dir
 
 Tasks
@@ -50,13 +44,31 @@ dir
 Shopping
 dir
 
+Urlshortener
+dir
+
+Groupssettings
+dir
+
+Storage
+dir
+
+Orkut
+dir
+
+Discovery
+dir
+
 Calendar
+dir
+
+Drive
 dir
 
 Latitude
 dir
 
-Urlshortener
+Compute
 dir
 
 Books

@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@
 // Documentation:
 //   http://code.google.com/apis/calendar/v3/using.html
 // Classes:
-//   GTLQueryCalendar (33 custom class methods, 27 custom properties)
+//   GTLQueryCalendar (32 custom class methods, 29 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLQuery.h"
@@ -52,8 +52,10 @@
 //
 // Method-specific parameters; see the comments below for more information.
 //
+@property (assign) BOOL alwaysIncludeEmail;
 @property (assign) NSInteger calendarExpansionMax;
 @property (copy) NSString *calendarId;
+@property (assign) BOOL colorRgbFormat;
 @property (copy) NSString *destination;
 @property (copy) NSString *eventId;
 @property (assign) NSInteger groupExpansionMax;
@@ -74,12 +76,10 @@
 @property (assign) BOOL showHiddenInvitations;
 @property (assign) BOOL singleEvents;
 @property (copy) NSString *text;
-// "timeMax" has different types for some query methods; see the documentation
-// for the right type for each query method.
-@property (retain) id timeMax;
-@property (retain) id timeMin;
+@property (retain) GTLDateTime *timeMax;
+@property (retain) GTLDateTime *timeMin;
 @property (copy) NSString *timeZone;
-@property (copy) NSString *updatedMin;
+@property (retain) GTLDateTime *updatedMin;
 
 #pragma mark -
 #pragma mark "acl" methods
@@ -123,7 +123,6 @@
 //   calendarId: Calendar identifier.
 //  Authorization scope(s):
 //   kGTLAuthScopeCalendar
-//   kGTLAuthScopeCalendarReadonly
 // Fetches a GTLCalendarAcl.
 + (id)queryForAclListWithCalendarId:(NSString *)calendarId;
 
@@ -175,6 +174,11 @@
 
 // Method: calendar.calendarList.insert
 // Adds an entry to the user's calendar list.
+//  Optional:
+//   colorRgbFormat: Whether to use the 'frontendColor' and 'backgroundColor'
+//     fields to write the calendar colors (RGB). If this feature is used, the
+//     index-based 'color' field will be set to the best matching option
+//     automatically. Optional. The default is False.
 //  Authorization scope(s):
 //   kGTLAuthScopeCalendar
 // Fetches a GTLCalendarCalendarListEntry.
@@ -207,6 +211,11 @@
 // semantics.
 //  Required:
 //   calendarId: Calendar identifier.
+//  Optional:
+//   colorRgbFormat: Whether to use the 'frontendColor' and 'backgroundColor'
+//     fields to write the calendar colors (RGB). If this feature is used, the
+//     index-based 'color' field will be set to the best matching option
+//     automatically. Optional. The default is False.
 //  Authorization scope(s):
 //   kGTLAuthScopeCalendar
 // Fetches a GTLCalendarCalendarListEntry.
@@ -217,6 +226,11 @@
 // Updates an entry on the user's calendar list.
 //  Required:
 //   calendarId: Calendar identifier.
+//  Optional:
+//   colorRgbFormat: Whether to use the 'frontendColor' and 'backgroundColor'
+//     fields to write the calendar colors (RGB). If this feature is used, the
+//     index-based 'color' field will be set to the best matching option
+//     automatically. Optional. The default is False.
 //  Authorization scope(s):
 //   kGTLAuthScopeCalendar
 // Fetches a GTLCalendarCalendarListEntry.
@@ -287,6 +301,9 @@
 
 // Method: calendar.colors.get
 // Returns the color definitions for calendars and events.
+//  Authorization scope(s):
+//   kGTLAuthScopeCalendar
+//   kGTLAuthScopeCalendarReadonly
 // Fetches a GTLCalendarColors.
 + (id)queryForColorsGet;
 
@@ -313,6 +330,12 @@
 //   calendarId: Calendar identifier.
 //   eventId: Event identifier.
 //  Optional:
+//   alwaysIncludeEmail: Whether to always include a value in the "email" field
+//     for the organizer, creator and attendees, even if no real email is
+//     available (i.e. a generated, non-working value will be provided). The use
+//     of this option is discouraged and should only be used by clients which
+//     cannot handle the absence of an email address value in the mentioned
+//     places. Optional. The default is False.
 //   maxAttendees: The maximum number of attendees to include in the response.
 //     If there are more than the specified number of attendees, only the
 //     participant is returned. Optional.
@@ -354,6 +377,12 @@
 //   calendarId: Calendar identifier.
 //   eventId: Recurring event identifier.
 //  Optional:
+//   alwaysIncludeEmail: Whether to always include a value in the "email" field
+//     for the organizer, creator and attendees, even if no real email is
+//     available (i.e. a generated, non-working value will be provided). The use
+//     of this option is discouraged and should only be used by clients which
+//     cannot handle the absence of an email address value in the mentioned
+//     places. Optional. The default is False.
 //   maxAttendees: The maximum number of attendees to include in the response.
 //     If there are more than the specified number of attendees, only the
 //     participant is returned. Optional.
@@ -377,6 +406,12 @@
 //  Required:
 //   calendarId: Calendar identifier.
 //  Optional:
+//   alwaysIncludeEmail: Whether to always include a value in the "email" field
+//     for the organizer, creator and attendees, even if no real email is
+//     available (i.e. a generated, non-working value will be provided). The use
+//     of this option is discouraged and should only be used by clients which
+//     cannot handle the absence of an email address value in the mentioned
+//     places. Optional. The default is False.
 //   iCalUID: Specifies iCalendar UID (iCalUID) of events to be included in the
 //     response. Optional.
 //   maxAttendees: The maximum number of attendees to include in the response.
@@ -439,6 +474,12 @@
 //   calendarId: Calendar identifier.
 //   eventId: Event identifier.
 //  Optional:
+//   alwaysIncludeEmail: Whether to always include a value in the "email" field
+//     for the organizer, creator and attendees, even if no real email is
+//     available (i.e. a generated, non-working value will be provided). The use
+//     of this option is discouraged and should only be used by clients which
+//     cannot handle the absence of an email address value in the mentioned
+//     places. Optional. The default is False.
 //   sendNotifications: Whether to send notifications about the event update
 //     (e.g. attendee's responses, title changes, etc.). Optional. The default
 //     is False.
@@ -463,26 +504,18 @@
 + (id)queryForEventsQuickAddWithCalendarId:(NSString *)calendarId
                                       text:(NSString *)text;
 
-// Method: calendar.events.reset
-// Resets a specialized instance of a recurring event to its original state.
-//  Required:
-//   calendarId: Calendar identifier.
-//   eventId: Event identifier.
-//  Optional:
-//   sendNotifications: Whether to send notifications about the event update.
-//     Optional. The default is False.
-//  Authorization scope(s):
-//   kGTLAuthScopeCalendar
-// Fetches a GTLCalendarEvent.
-+ (id)queryForEventsResetWithCalendarId:(NSString *)calendarId
-                                eventId:(NSString *)eventId;
-
 // Method: calendar.events.update
 // Updates an event.
 //  Required:
 //   calendarId: Calendar identifier.
 //   eventId: Event identifier.
 //  Optional:
+//   alwaysIncludeEmail: Whether to always include a value in the "email" field
+//     for the organizer, creator and attendees, even if no real email is
+//     available (i.e. a generated, non-working value will be provided). The use
+//     of this option is discouraged and should only be used by clients which
+//     cannot handle the absence of an email address value in the mentioned
+//     places. Optional. The default is False.
 //   sendNotifications: Whether to send notifications about the event update
 //     (e.g. attendee's responses, title changes, etc.). Optional. The default
 //     is False.

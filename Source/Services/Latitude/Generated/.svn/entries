@@ -1,14 +1,14 @@
 10
 
 dir
-134
+201
 http://google-api-objectivec-client.googlecode.com/svn/trunk/Source/Services/Latitude/Generated
 http://google-api-objectivec-client.googlecode.com/svn
 
 
 
-2011-12-16T21:13:04.166932Z
-131
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-1bbc88cf5463ce84d54d440033d1d0cf
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:41.000000Z
+8bce4b45955f63f9955466f29dc6191c
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -58,7 +58,7 @@ grobbins@google.com
 
 
 
-2742
+2734
 
 GTLQueryLatitude.m
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-ba703bf250b14b8e5ef6d7c075206721
-2011-08-23T19:15:08.363770Z
-29
+2012-08-20T23:32:41.000000Z
+97c496736255f25546bd44f792f8bf96
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -92,7 +92,7 @@ grobbins@google.com
 
 
 
-3794
+3786
 
 GTLLatitudeConstants.h
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-907131f1afdbd8cd4083a537e1b22db1
-2011-08-24T18:22:08.458369Z
-32
+2012-08-20T23:32:41.000000Z
+c96fb4164ef2d2b66d8132ab593ad0b2
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -126,7 +126,7 @@ grobbins@google.com
 
 
 
-1842
+1986
 
 GTLLatitudeLocationFeed.h
 file
@@ -134,10 +134,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-2dd9749d7519e70836a60a72695b3dee
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:41.000000Z
+c624c66896a5287c52d80c10796ce4df
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -160,7 +160,7 @@ grobbins@google.com
 
 
 
-1652
+1644
 
 GTLLatitudeLocation.m
 file
@@ -168,10 +168,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-6c83b60b7c769bea642d34ead72dadba
-2011-08-23T19:15:08.363770Z
-29
+2012-08-20T23:32:41.000000Z
+3fbe8aa01625a132613ff4e0ad593e31
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -194,7 +194,7 @@ grobbins@google.com
 
 
 
-1489
+1481
 
 GTLLatitude.h
 file
@@ -202,10 +202,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-2b7320567b0a722be0f2ee8868191aa1
-2011-08-24T18:22:08.458369Z
-32
+2012-08-20T23:32:41.000000Z
+93ec909ca6b50dbf3dc78da24cfd4901
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -228,7 +228,7 @@ grobbins@google.com
 
 
 
-1173
+1165
 
 GTLServiceLatitude.h
 file
@@ -236,10 +236,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-5ba8365e16deb30df4e274f242fde6b1
-2011-08-23T19:15:08.363770Z
-29
+2012-08-20T23:32:41.000000Z
+2a8ff83d3653886c106cbcefa67ab1c5
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -262,7 +262,7 @@ grobbins@google.com
 
 
 
-2158
+2150
 
 GTLLatitudeConstants.m
 file
@@ -270,10 +270,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-b39525c65bac9cfda537c3874536d32b
-2011-08-24T18:22:08.458369Z
-32
+2012-08-20T23:32:41.000000Z
+976cddc89d42838ca129d3b5e836f547
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -296,7 +296,7 @@ grobbins@google.com
 
 
 
-1508
+1628
 
 GTLLatitudeLocationFeed.m
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-b3dc33246be13b006f760ac5f468625f
-2011-08-23T19:15:08.363770Z
-29
+2012-08-20T23:32:41.000000Z
+b1db7350d451a57f5feb7215285d2bf6
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -330,7 +330,7 @@ grobbins@google.com
 
 
 
-1643
+1635
 
 GTLServiceLatitude.m
 file
@@ -338,10 +338,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-18b50d0881923fb51f9eef36fbda6cb6
-2011-12-16T21:13:04.166932Z
-131
+2012-08-20T23:32:41.000000Z
+1c592005433d52b16cae209d47cc30e6
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -364,7 +364,7 @@ grobbins@google.com
 
 
 
-2124
+2116
 
 GTLQueryLatitude.h
 file
@@ -372,10 +372,10 @@ file
 
 
 
-2012-01-11T13:36:43.000000Z
-b110f0462c22fa6d6d49ec904df24c0e
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:41.000000Z
+7718f2fe4f07e5738d81c2c5e7093f06
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -398,5 +398,5 @@ grobbins@google.com
 
 
 
-4550
+5100
 

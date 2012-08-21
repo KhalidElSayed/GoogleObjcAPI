@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 50
-/svn/!svn/ver/37/trunk/Examples/URLShortenerSample
+V 51
+/svn/!svn/ver/169/trunk/Examples/URLShortenerSample
 END
 main.m
 K 25
@@ -24,8 +24,8 @@ END
 URLShortenerSampleWindowController.m
 K 25
 svn:wc:ra_dav:version-url
-V 87
-/svn/!svn/ver/37/trunk/Examples/URLShortenerSample/URLShortenerSampleWindowController.m
+V 88
+/svn/!svn/ver/169/trunk/Examples/URLShortenerSample/URLShortenerSampleWindowController.m
 END
 URLShortenerAppController.h
 K 25

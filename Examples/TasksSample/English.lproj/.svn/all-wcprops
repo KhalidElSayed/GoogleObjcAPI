@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 57
-/svn/!svn/ver/28/trunk/Examples/TasksSample/English.lproj
+V 58
+/svn/!svn/ver/154/trunk/Examples/TasksSample/English.lproj
 END
 InfoPlist.strings
 K 25
@@ -12,8 +12,8 @@ END
 TasksSampleWindow.xib
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/!svn/ver/22/trunk/Examples/TasksSample/English.lproj/TasksSampleWindow.xib
+V 80
+/svn/!svn/ver/154/trunk/Examples/TasksSample/English.lproj/TasksSampleWindow.xib
 END
 MainMenu.xib
 K 25

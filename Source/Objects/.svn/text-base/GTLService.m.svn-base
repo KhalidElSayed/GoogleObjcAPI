@@ -89,14 +89,12 @@ static NSString *ETagIfPresent(GTLObject *obj) {
                                           chunkSize:(NSUInteger)chunkSize
                                      fetcherService:(GTMHTTPFetcherService *)fetcherService;
 - (void)pauseFetching;
-- (void)resumeFetchingWithDelegate:(id)delegate;
+- (void)resumeFetching;
 - (BOOL)isPaused;
 @end
 
 
 @interface GTLService ()
-+ (NSString *)defaultApplicationIdentifier;
-+ (NSString *)systemVersionString;
 - (void)prepareToParseObjectForFetcher:(GTMHTTPFetcher *)fetcher;
 - (void)handleParsedObjectForFetcher:(GTMHTTPFetcher *)fetcher;
 - (BOOL)fetchNextPageWithQuery:(GTLQuery *)query
@@ -216,67 +214,19 @@ static NSString *ETagIfPresent(GTLObject *obj) {
   [super dealloc];
 }
 
-+ (NSString *)systemVersionString {
-
-  NSString *systemString = @"";
-
-#ifndef GTL_FOUNDATION_ONLY
-  // Mac build
-  SInt32 systemMajor = 0, systemMinor = 0, systemRelease = 0;
-  (void) Gestalt(gestaltSystemVersionMajor, &systemMajor);
-  (void) Gestalt(gestaltSystemVersionMinor, &systemMinor);
-  (void) Gestalt(gestaltSystemVersionBugFix, &systemRelease);
-
-  systemString = [NSString stringWithFormat:@"MacOSX/%d.%d.%d",
-    (int)systemMajor, (int)systemMinor, (int)systemRelease];
-
-#elif GTL_IPHONE && TARGET_OS_IPHONE
-  // compiling against the iPhone SDK
-
-  static NSString *savedSystemString = nil;
-
-  @synchronized([GTLService class]) {
-
-    if (savedSystemString == nil) {
-      // avoid the slowness of calling currentDevice repeatedly on the iPhone
-      UIDevice* currentDevice = [UIDevice currentDevice];
-
-      NSString *rawModel = [currentDevice model];
-      NSString *model = [GTLUtilities userAgentStringForString:rawModel];
-
-      NSString *systemVersion = [currentDevice systemVersion];
-
-      savedSystemString = [[NSString alloc] initWithFormat:@"%@/%@",
-                           model, systemVersion]; // "iPod_Touch/2.2"
-    }
-  }
-  systemString = savedSystemString;
-
-#elif GTL_IPHONE
-  // GTL_IPHONE defined but compiling against the Mac SDK
-  systemString = @"iPhone/x.x";
-
-#elif defined(_SYS_UTSNAME_H)
-  // Foundation-only build
-  struct utsname unameRecord;
-  uname(&unameRecord);
-
-  systemString = [NSString stringWithFormat:@"%s/%s",
-                  unameRecord.sysname, unameRecord.release]; // "Darwin/8.11.1"
-#endif
-
-  return systemString;
-}
-
 - (NSString *)requestUserAgent {
-
   NSString *userAgent = self.userAgent;
-
   if ([userAgent length] == 0) {
-
     // the service instance is missing an explicit user-agent; use the bundle ID
     // or process name
-    userAgent = [[self class] defaultApplicationIdentifier];
+    NSBundle *owningBundle = [NSBundle bundleForClass:[self class]];
+    if (owningBundle == nil
+        || [[owningBundle bundleIdentifier] isEqual:@"com.google.GTLFramework"]) {
+
+      owningBundle = [NSBundle mainBundle];
+    }
+
+    userAgent = GTMApplicationIdentifier(owningBundle);
   }
 
   NSString *requestUserAgent = userAgent;
@@ -291,9 +241,9 @@ static NSString *ETagIfPresent(GTLObject *obj) {
     // information, and the system version
     NSString *libVersionString = GTLFrameworkVersionString();
 
-    NSString *systemString = [[self class] systemVersionString];
+    NSString *systemString = GTMSystemVersionString();
 
-    // We don't clean this with userAgentStringForString: so spaces are
+    // We don't clean this with GTMCleanedUserAgentString so spaces are
     // preserved
     NSString *userAgentAddition = self.userAgentAddition;
     NSString *customString = userAgentAddition ?
@@ -742,12 +692,10 @@ static NSString *ETagIfPresent(GTLObject *obj) {
                                                     requestID:requestID];
 
     NSError *error = nil;
-    NSString *jsonStr = [GTLJSONParser stringWithObject:rpcPayload
-                                          humanReadable:NO
-                                                  error:&error];
-    if (error == nil) {
-      dataToPost = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
-    } else {
+    dataToPost = [GTLJSONParser dataWithObject:rpcPayload
+                                 humanReadable:NO
+                                         error:&error];
+    if (dataToPost == nil) {
       // There is the chance something went into parameters that wasn't valid.
       GTL_DEBUG_LOG(@"JSON generation error: %@", error);
       return nil;
@@ -840,12 +788,10 @@ static NSString *ETagIfPresent(GTLObject *obj) {
 
   NSError *error = nil;
   NSData *dataToPost = nil;
-  NSString *jsonStr = [GTLJSONParser stringWithObject:rpcPayloads
-                                        humanReadable:NO
-                                                error:&error];
-  if (error == nil) {
-    dataToPost = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
-  } else {
+  dataToPost = [GTLJSONParser dataWithObject:rpcPayloads
+                               humanReadable:NO
+                                       error:&error];
+  if (dataToPost == nil) {
     // There is the chance something went into parameters that wasn't valid.
     GTL_DEBUG_LOG(@"JSON generation error: %@", error);
     return nil;
@@ -930,12 +876,10 @@ static NSString *ETagIfPresent(GTLObject *obj) {
     } else {
       whatToSend = json;
     }
-    NSString *jsonStr = [GTLJSONParser stringWithObject:whatToSend
-                                          humanReadable:NO
-                                                  error:&error];
-    if (error == nil) {
-      dataToPost = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
-    } else {
+    dataToPost = [GTLJSONParser dataWithObject:whatToSend
+                                 humanReadable:NO
+                                         error:&error];
+    if (dataToPost == nil) {
       GTL_DEBUG_LOG(@"JSON generation error: %@", error);
     }
   }
@@ -1008,7 +952,7 @@ totalBytesExpectedToSend:(NSInteger)totalBytesExpected {
     }
   } else {
     // There was an error from the fetch
-    int status = [error code];
+    NSInteger status = [error code];
     if (status >= 300) {
       // Return the HTTP error status code along with a more descriptive error
       // from within the HTTP response payload.
@@ -2063,7 +2007,7 @@ totalBytesExpectedToSend:(NSInteger)totalBytesExpected {
 
 - (void)setUserAgent:(NSString *)userAgent {
   // remove whitespace and unfriendly characters
-  NSString *str = [GTLUtilities userAgentStringForString:userAgent];
+  NSString *str = GTMCleanedUserAgentString(userAgent);
   [self setExactUserAgent:str];
 }
 
@@ -2191,60 +2135,6 @@ totalBytesExpectedToSend:(NSInteger)totalBytesExpected {
   uploadChunkSize_ = val;
 }
 
-#pragma mark -
-
-// return a generic name and version for the current application; this avoids
-// anonymous server transactions.  Applications should call setUserAgent
-// to avoid the need for this method to be used.
-+ (NSString *)defaultApplicationIdentifier {
-
-  static NSString *sAppID = nil;
-  if (sAppID != nil) return sAppID;
-
-  // if there's a bundle ID, use that; otherwise, use the process name
-
-  // if this code is compiled directly into an app or plug-in, we want
-  // that app or plug-in's bundle; if it was loaded as part of the
-  // GTL framework, we'll settle for the main bundle's ID
-  NSBundle *owningBundle = [NSBundle bundleForClass:self];
-  if (owningBundle == nil
-      || [[owningBundle bundleIdentifier] isEqual:@"com.google.GTLFramework"]) {
-
-    owningBundle = [NSBundle mainBundle];
-  }
-
-  NSString *identifier;
-
-  NSString *bundleID = [owningBundle bundleIdentifier];
-  if ([bundleID length] > 0) {
-    identifier = bundleID;
-  } else {
-    // fall back on the procname, prefixed by "proc" to flag that it's
-    // autogenerated and perhaps unreliable
-    NSString *procName = [[NSProcessInfo processInfo] processName];
-    identifier = [NSString stringWithFormat:@"proc_%@", procName];
-  }
-
-  // clean up whitespace and special characters
-  identifier = [GTLUtilities userAgentStringForString:identifier];
-
-  // if there's a version number, append that
-  NSString *version = [owningBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-  if ([version length] == 0) {
-    version = [owningBundle objectForInfoDictionaryKey:@"CFBundleVersion"];
-  }
-
-  // clean up whitespace and special characters
-  version = [GTLUtilities userAgentStringForString:version];
-
-  // glue the two together (cleanup done above or cleanup would strip the slash)
-  if ([version length] > 0) {
-    identifier = [identifier stringByAppendingFormat:@"/%@", version];
-  }
-
-  sAppID = [identifier copy];
-  return sAppID;
-}
 @end
 
 @implementation GTLServiceTicket
@@ -2343,11 +2233,11 @@ totalBytesExpectedToSend:(NSInteger)totalBytesExpected {
 }
 
 - (void)resumeUpload {
-  BOOL canResume = [objectFetcher_ respondsToSelector:@selector(resumeFetchingWithDelegate:)];
+  BOOL canResume = [objectFetcher_ respondsToSelector:@selector(resumeFetching)];
   GTL_DEBUG_ASSERT(canResume, @"unresumable ticket");
 
   if (canResume) {
-    [(GTMHTTPUploadFetcher *)objectFetcher_ resumeFetchingWithDelegate:[self service]];
+    [(GTMHTTPUploadFetcher *)objectFetcher_ resumeFetching];
   }
 }
 

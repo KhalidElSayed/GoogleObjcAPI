@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 64
-/svn/!svn/ver/28/trunk/Examples/URLShortenerSample/English.lproj
+V 65
+/svn/!svn/ver/154/trunk/Examples/URLShortenerSample/English.lproj
 END
 InfoPlist.strings
 K 25
@@ -12,8 +12,8 @@ END
 URLShortenerSampleWindow.xib
 K 25
 svn:wc:ra_dav:version-url
-V 93
-/svn/!svn/ver/23/trunk/Examples/URLShortenerSample/English.lproj/URLShortenerSampleWindow.xib
+V 94
+/svn/!svn/ver/154/trunk/Examples/URLShortenerSample/English.lproj/URLShortenerSampleWindow.xib
 END
 MainMenu.xib
 K 25

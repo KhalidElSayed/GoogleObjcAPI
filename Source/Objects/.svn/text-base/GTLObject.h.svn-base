@@ -17,6 +17,8 @@
 //  GTLObject.h
 //
 
+// GTLObject documentation:
+// https://code.google.com/p/google-api-objectivec-client/wiki/Introduction#Objects_and_Queries
 
 #import <Foundation/Foundation.h>
 
@@ -156,17 +158,28 @@
 @end
 
 // Collection objects with an "items" property should derive from GTLCollection
-// object.  This provides support for fast object enumeration and the
-// itemAtIndex: convenience method.
+// object.  This provides support for fast object enumeration, the
+// itemAtIndex: convenience method, and indexed subscripts.
 //
 // Subclasses must implement the items method dynamically.
 @interface GTLCollectionObject : GTLObject <GTLCollectionProtocol, NSFastEnumeration>
 
-// itemAtIndex: returns nil when the index exceeds the bounds of the items array
+// itemAtIndex: and objectAtIndexedSubscript: return nil when the index exceeds
+// the bounds of the items array.
 - (id)itemAtIndex:(NSUInteger)idx;
+
+- (id)objectAtIndexedSubscript:(NSInteger)idx;
 
 @end
 
 @interface GTLCollectionObject (DynamicMethods)
 - (NSArray *)items;
+@end
+
+// Base object use for when an service method directly returns an array instead
+// of an object. Normally methods should return an object with an 'items'
+// property, this exists for the methods not up to spec.
+@interface GTLResultArray : GTLCollectionObject
+// This method should only be called by subclasses.
+- (NSArray *)itemsWithItemClass:(Class)itemClass;
 @end

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 29
-/svn/!svn/ver/92/trunk/Source
+V 30
+/svn/!svn/ver/108/trunk/Source
 END
 GTMReadMonitorInputStream.m
 K 25
@@ -18,8 +18,8 @@ END
 GTMHTTPFetcher.m
 K 25
 svn:wc:ra_dav:version-url
-V 46
-/svn/!svn/ver/89/trunk/Source/GTMHTTPFetcher.m
+V 47
+/svn/!svn/ver/108/trunk/Source/GTMHTTPFetcher.m
 END
 GTMMIMEDocument.h
 K 25
@@ -42,26 +42,26 @@ END
 GTMHTTPUploadFetcher.m
 K 25
 svn:wc:ra_dav:version-url
-V 52
-/svn/!svn/ver/78/trunk/Source/GTMHTTPUploadFetcher.m
+V 53
+/svn/!svn/ver/107/trunk/Source/GTMHTTPUploadFetcher.m
 END
 GTMMIMEDocument.m
 K 25
 svn:wc:ra_dav:version-url
-V 46
-/svn/!svn/ver/7/trunk/Source/GTMMIMEDocument.m
+V 48
+/svn/!svn/ver/105/trunk/Source/GTMMIMEDocument.m
 END
 GTMHTTPFetcherLogging.m
 K 25
 svn:wc:ra_dav:version-url
-V 53
-/svn/!svn/ver/91/trunk/Source/GTMHTTPFetcherLogging.m
+V 54
+/svn/!svn/ver/106/trunk/Source/GTMHTTPFetcherLogging.m
 END
 GTMHTTPFetcherService.h
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/!svn/ver/77/trunk/Source/GTMHTTPFetcherService.h
+/svn/!svn/ver/95/trunk/Source/GTMHTTPFetcherService.h
 END
 GTMGatherInputStream.h
 K 25
@@ -73,13 +73,13 @@ GTMHTTPFetcherService.m
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/!svn/ver/89/trunk/Source/GTMHTTPFetcherService.m
+/svn/!svn/ver/95/trunk/Source/GTMHTTPFetcherService.m
 END
 ReleaseNotes.txt
 K 25
 svn:wc:ra_dav:version-url
 V 46
-/svn/!svn/ver/92/trunk/Source/ReleaseNotes.txt
+/svn/!svn/ver/95/trunk/Source/ReleaseNotes.txt
 END
 GTMHTTPFetchHistory.h
 K 25
@@ -102,12 +102,12 @@ END
 GTMHTTPFetcher.h
 K 25
 svn:wc:ra_dav:version-url
-V 46
-/svn/!svn/ver/89/trunk/Source/GTMHTTPFetcher.h
+V 47
+/svn/!svn/ver/101/trunk/Source/GTMHTTPFetcher.h
 END
 GTMHTTPFetchHistory.m
 K 25
 svn:wc:ra_dav:version-url
-V 51
-/svn/!svn/ver/76/trunk/Source/GTMHTTPFetchHistory.m
+V 52
+/svn/!svn/ver/104/trunk/Source/GTMHTTPFetchHistory.m
 END

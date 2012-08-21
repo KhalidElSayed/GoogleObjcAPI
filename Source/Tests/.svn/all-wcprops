@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 36
-/svn/!svn/ver/122/trunk/Source/Tests
+/svn/!svn/ver/199/trunk/Source/Tests
 END
 GTLFrameworkTest.m
 K 25
@@ -21,6 +21,12 @@ svn:wc:ra_dav:version-url
 V 53
 /svn/!svn/ver/117/trunk/Source/Tests/GTLServiceTest.m
 END
+GTLBase64Test.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/148/trunk/Source/Tests/GTLBase64Test.m
+END
 GTLQueryTest.m
 K 25
 svn:wc:ra_dav:version-url
@@ -31,17 +37,17 @@ GTLObjectTest.m
 K 25
 svn:wc:ra_dav:version-url
 V 52
-/svn/!svn/ver/122/trunk/Source/Tests/GTLObjectTest.m
+/svn/!svn/ver/191/trunk/Source/Tests/GTLObjectTest.m
 END
 GTLUtilitiesTest.m
 K 25
 svn:wc:ra_dav:version-url
-V 54
-/svn/!svn/ver/69/trunk/Source/Tests/GTLUtilitiesTest.m
+V 55
+/svn/!svn/ver/148/trunk/Source/Tests/GTLUtilitiesTest.m
 END
 GTLDateTimeTest.m
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/svn/!svn/ver/114/trunk/Source/Tests/GTLDateTimeTest.m
+/svn/!svn/ver/199/trunk/Source/Tests/GTLDateTimeTest.m
 END

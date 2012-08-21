@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 44
-/svn/!svn/ver/106/trunk/Examples/BooksSample
+/svn/!svn/ver/169/trunk/Examples/BooksSample
 END
 main.m
 K 25
@@ -30,8 +30,8 @@ END
 BooksSampleWindowController.m
 K 25
 svn:wc:ra_dav:version-url
-V 73
-/svn/!svn/ver/37/trunk/Examples/BooksSample/BooksSampleWindowController.m
+V 74
+/svn/!svn/ver/169/trunk/Examples/BooksSample/BooksSampleWindowController.m
 END
 BooksSampleAppController.h
 K 25

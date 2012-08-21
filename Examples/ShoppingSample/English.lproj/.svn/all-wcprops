@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/svn/!svn/ver/28/trunk/Examples/ShoppingSample/English.lproj
+V 61
+/svn/!svn/ver/154/trunk/Examples/ShoppingSample/English.lproj
 END
 InfoPlist.strings
 K 25
@@ -12,8 +12,8 @@ END
 ShoppingSampleWindow.xib
 K 25
 svn:wc:ra_dav:version-url
-V 85
-/svn/!svn/ver/23/trunk/Examples/ShoppingSample/English.lproj/ShoppingSampleWindow.xib
+V 86
+/svn/!svn/ver/154/trunk/Examples/ShoppingSample/English.lproj/ShoppingSampleWindow.xib
 END
 MainMenu.xib
 K 25

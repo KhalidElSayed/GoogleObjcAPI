@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/svn/!svn/ver/98/trunk/Examples/CalendarSample/English.lproj
+V 61
+/svn/!svn/ver/199/trunk/Examples/CalendarSample/English.lproj
 END
 InfoPlist.strings
 K 25
@@ -18,8 +18,8 @@ END
 CalendarSampleWindow.xib
 K 25
 svn:wc:ra_dav:version-url
-V 85
-/svn/!svn/ver/98/trunk/Examples/CalendarSample/English.lproj/CalendarSampleWindow.xib
+V 86
+/svn/!svn/ver/154/trunk/Examples/CalendarSample/English.lproj/CalendarSampleWindow.xib
 END
 MainMenu.xib
 K 25
@@ -30,6 +30,6 @@ END
 EditACLWindow.xib
 K 25
 svn:wc:ra_dav:version-url
-V 78
-/svn/!svn/ver/98/trunk/Examples/CalendarSample/English.lproj/EditACLWindow.xib
+V 79
+/svn/!svn/ver/199/trunk/Examples/CalendarSample/English.lproj/EditACLWindow.xib
 END

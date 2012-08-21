@@ -73,9 +73,12 @@ _EXTERN NSString* const kGTMOAuth2KeychainErrorDomain       _INITIALIZE_AS(@"com
 
 #if NS_BLOCKS_AVAILABLE
   void (^completionBlock_)(GTMOAuth2ViewControllerTouch *, GTMOAuth2Authentication *, NSError *);
+
+  void (^popViewBlock_)(void);
 #endif
 
   NSString *keychainItemName_;
+  CFTypeRef keychainItemAccessibility_;
 
   // if non-nil, the html string to be displayed immediately upon opening
   // of the web view
@@ -118,6 +121,12 @@ _EXTERN NSString* const kGTMOAuth2KeychainErrorDomain       _INITIALIZE_AS(@"com
 // to the keychain
 @property (nonatomic, copy) NSString *keychainItemName;
 
+// the keychain item accessibility is a system constant for use
+// with kSecAttrAccessible.
+//
+// Since it's a system constant, we do not need to retain it.
+@property (nonatomic, assign) CFTypeRef keychainItemAccessibility;
+
 // optional html string displayed immediately upon opening the web view
 //
 // This string is visible just until the sign-in web page loads, and
@@ -138,6 +147,12 @@ _EXTERN NSString* const kGTMOAuth2KeychainErrorDomain       _INITIALIZE_AS(@"com
 @property (nonatomic, retain) IBOutlet UIView *navButtonsView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *rightBarButtonItem;
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
+
+#if NS_BLOCKS_AVAILABLE
+// An optional block to be called when the view should be popped. If not set,
+// the view controller will use its navigation controller to pop the view.
+@property (nonatomic, copy) void (^popViewBlock)(void);
+#endif
 
 // the default timeout for an unreachable network during display of the
 // sign-in page is 10 seconds; set this to 0 to have no timeout
@@ -237,12 +252,11 @@ _EXTERN NSString* const kGTMOAuth2KeychainErrorDomain       _INITIALIZE_AS(@"com
            completionHandler:(void (^)(GTMOAuth2ViewControllerTouch *viewController, GTMOAuth2Authentication *auth, NSError *error))handler;
 #endif
 
-// Override default in UIViewController. If we have a navigationController, ask
-// it. else default result (i.e., Portrait mode only).
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
-
 // subclasses may override authNibName to specify a custom name
 + (NSString *)authNibName;
+
+// subclasses may override authNibBundle to specify a custom bundle
++ (NSBundle *)authNibBundle;
 
 // apps may replace the sign-in class with their own subclass of it
 + (Class)signInClass;
@@ -278,8 +292,12 @@ _EXTERN NSString* const kGTMOAuth2KeychainErrorDomain       _INITIALIZE_AS(@"com
 // out"
 + (BOOL)removeAuthFromKeychainForName:(NSString *)keychainItemName;
 
-// method for saving the stored access token and secret; typically, this method
-// is used only by this.
+// method for saving the stored access token and secret
++ (BOOL)saveParamsToKeychainForName:(NSString *)keychainItemName
+                      accessibility:(CFTypeRef)accessibility
+                     authentication:(GTMOAuth2Authentication *)auth;
+
+// older version, defaults to kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
 + (BOOL)saveParamsToKeychainForName:(NSString *)keychainItemName
                      authentication:(GTMOAuth2Authentication *)auth;
 
@@ -311,8 +329,12 @@ enum {
                            error:(NSError **)error;
 
 // OK to pass nil for the error parameter.
+//
+// accessibility should be one of the constants for kSecAttrAccessible
+// such as kSecAttrAccessibleWhenUnlocked
 - (BOOL)setPassword:(NSString *)password
          forService:(NSString *)service
+      accessibility:(CFTypeRef)accessibility
             account:(NSString *)account
               error:(NSError **)error;
 

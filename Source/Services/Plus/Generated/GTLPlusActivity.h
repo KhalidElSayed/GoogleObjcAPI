@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,13 +24,14 @@
 // Description:
 //   The Google+ API enables developers to build on top of the Google+ platform.
 // Documentation:
-//   http://developers.google.com/+/api/
+//   https://developers.google.com/+/api/
 // Classes:
-//   GTLPlusActivity (0 custom class methods, 20 custom properties)
-//   GTLPlusActivityActor (0 custom class methods, 4 custom properties)
+//   GTLPlusActivity (0 custom class methods, 19 custom properties)
+//   GTLPlusActivityActor (0 custom class methods, 5 custom properties)
 //   GTLPlusActivityObject (0 custom class methods, 10 custom properties)
 //   GTLPlusActivityProvider (0 custom class methods, 1 custom properties)
 //   GTLPlusActivityActorImage (0 custom class methods, 1 custom properties)
+//   GTLPlusActivityActorName (0 custom class methods, 2 custom properties)
 //   GTLPlusActivityObjectActor (0 custom class methods, 4 custom properties)
 //   GTLPlusActivityObjectAttachmentsItem (0 custom class methods, 8 custom properties)
 //   GTLPlusActivityObjectPlusoners (0 custom class methods, 2 custom properties)
@@ -50,6 +51,7 @@
 @class GTLPlusAcl;
 @class GTLPlusActivityActor;
 @class GTLPlusActivityActorImage;
+@class GTLPlusActivityActorName;
 @class GTLPlusActivityObject;
 @class GTLPlusActivityObjectActor;
 @class GTLPlusActivityObjectActorImage;
@@ -102,9 +104,6 @@
 
 // The object of this activity.
 @property (retain) GTLPlusActivityObject *object;
-
-// True if this activity is a placeholder.
-@property (retain) NSNumber *placeholder;  // boolValue
 
 // ID of the place where this activity occurred.
 @property (copy) NSString *placeId;
@@ -159,6 +158,9 @@
 
 // The image representation of the actor.
 @property (retain) GTLPlusActivityActorImage *image;
+
+// An object representation of the individual components of name.
+@property (retain) GTLPlusActivityActorName *name;
 
 // The link to the actor's Google profile.
 @property (copy) NSString *url;
@@ -242,6 +244,22 @@
 // square, append the query string ?sz=x, where x is the dimension in pixels of
 // each side.
 @property (copy) NSString *url;
+
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+//   GTLPlusActivityActorName
+//
+
+@interface GTLPlusActivityActorName : GTLObject
+
+// The family name (last name) of the actor.
+@property (copy) NSString *familyName;
+
+// The given name (first name) of the actor.
+@property (copy) NSString *givenName;
 
 @end
 

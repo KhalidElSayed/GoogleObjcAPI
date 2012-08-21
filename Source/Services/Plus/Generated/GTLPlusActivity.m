@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,13 +24,14 @@
 // Description:
 //   The Google+ API enables developers to build on top of the Google+ platform.
 // Documentation:
-//   http://developers.google.com/+/api/
+//   https://developers.google.com/+/api/
 // Classes:
-//   GTLPlusActivity (0 custom class methods, 20 custom properties)
-//   GTLPlusActivityActor (0 custom class methods, 4 custom properties)
+//   GTLPlusActivity (0 custom class methods, 19 custom properties)
+//   GTLPlusActivityActor (0 custom class methods, 5 custom properties)
 //   GTLPlusActivityObject (0 custom class methods, 10 custom properties)
 //   GTLPlusActivityProvider (0 custom class methods, 1 custom properties)
 //   GTLPlusActivityActorImage (0 custom class methods, 1 custom properties)
+//   GTLPlusActivityActorName (0 custom class methods, 2 custom properties)
 //   GTLPlusActivityObjectActor (0 custom class methods, 4 custom properties)
 //   GTLPlusActivityObjectAttachmentsItem (0 custom class methods, 8 custom properties)
 //   GTLPlusActivityObjectPlusoners (0 custom class methods, 2 custom properties)
@@ -52,8 +53,8 @@
 
 @implementation GTLPlusActivity
 @dynamic access, actor, address, annotation, crosspostSource, ETag, geocode,
-         identifier, kind, object, placeholder, placeId, placeName, provider,
-         published, radius, title, updated, url, verb;
+         identifier, kind, object, placeId, placeName, provider, published,
+         radius, title, updated, url, verb;
 
 + (NSDictionary *)propertyToJSONKeyMap {
   NSDictionary *map =
@@ -77,7 +78,7 @@
 //
 
 @implementation GTLPlusActivityActor
-@dynamic displayName, identifier, image, url;
+@dynamic displayName, identifier, image, name, url;
 
 + (NSDictionary *)propertyToJSONKeyMap {
   NSDictionary *map =
@@ -132,6 +133,16 @@
 
 @implementation GTLPlusActivityActorImage
 @dynamic url;
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+//   GTLPlusActivityActorName
+//
+
+@implementation GTLPlusActivityActorName
+@dynamic familyName, givenName;
 @end
 
 

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 58
-/svn/!svn/ver/133/trunk/Source/Services/Calendar/Generated
+/svn/!svn/ver/196/trunk/Source/Services/Calendar/Generated
 END
 GTLCalendarAclRule.m
 K 25
@@ -30,8 +30,8 @@ END
 GTLCalendarTimePeriod.h
 K 25
 svn:wc:ra_dav:version-url
-V 81
-/svn/!svn/ver/98/trunk/Source/Services/Calendar/Generated/GTLCalendarTimePeriod.h
+V 82
+/svn/!svn/ver/135/trunk/Source/Services/Calendar/Generated/GTLCalendarTimePeriod.h
 END
 GTLCalendarFreeBusyRequest.m
 K 25
@@ -115,7 +115,7 @@ GTLCalendarCalendarListEntry.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svn/!svn/ver/123/trunk/Source/Services/Calendar/Generated/GTLCalendarCalendarListEntry.h
+/svn/!svn/ver/196/trunk/Source/Services/Calendar/Generated/GTLCalendarCalendarListEntry.h
 END
 GTLCalendarColorDefinition.h
 K 25
@@ -133,7 +133,7 @@ GTLCalendarEventAttendee.h
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svn/!svn/ver/123/trunk/Source/Services/Calendar/Generated/GTLCalendarEventAttendee.h
+/svn/!svn/ver/182/trunk/Source/Services/Calendar/Generated/GTLCalendarEventAttendee.h
 END
 GTLCalendarColorDefinition.m
 K 25
@@ -144,8 +144,8 @@ END
 GTLCalendarCalendarListEntry.m
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svn/!svn/ver/98/trunk/Source/Services/Calendar/Generated/GTLCalendarCalendarListEntry.m
+V 89
+/svn/!svn/ver/196/trunk/Source/Services/Calendar/Generated/GTLCalendarCalendarListEntry.m
 END
 GTLCalendarError.m
 K 25
@@ -168,8 +168,8 @@ END
 GTLCalendarEventAttendee.m
 K 25
 svn:wc:ra_dav:version-url
-V 84
-/svn/!svn/ver/98/trunk/Source/Services/Calendar/Generated/GTLCalendarEventAttendee.m
+V 85
+/svn/!svn/ver/178/trunk/Source/Services/Calendar/Generated/GTLCalendarEventAttendee.m
 END
 GTLCalendarColors.h
 K 25
@@ -205,7 +205,7 @@ GTLQueryCalendar.h
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svn/!svn/ver/133/trunk/Source/Services/Calendar/Generated/GTLQueryCalendar.h
+/svn/!svn/ver/196/trunk/Source/Services/Calendar/Generated/GTLQueryCalendar.h
 END
 GTLCalendarCalendarList.h
 K 25
@@ -252,8 +252,8 @@ END
 GTLQueryCalendar.m
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/!svn/ver/98/trunk/Source/Services/Calendar/Generated/GTLQueryCalendar.m
+V 77
+/svn/!svn/ver/196/trunk/Source/Services/Calendar/Generated/GTLQueryCalendar.m
 END
 GTLCalendarEventReminder.m
 K 25
@@ -277,7 +277,7 @@ GTLCalendarEvent.h
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svn/!svn/ver/123/trunk/Source/Services/Calendar/Generated/GTLCalendarEvent.h
+/svn/!svn/ver/196/trunk/Source/Services/Calendar/Generated/GTLCalendarEvent.h
 END
 GTLCalendarSetting.m
 K 25
@@ -288,8 +288,8 @@ END
 GTLCalendarEvent.m
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/!svn/ver/98/trunk/Source/Services/Calendar/Generated/GTLCalendarEvent.m
+V 77
+/svn/!svn/ver/182/trunk/Source/Services/Calendar/Generated/GTLCalendarEvent.m
 END
 GTLCalendarAclRule.h
 K 25

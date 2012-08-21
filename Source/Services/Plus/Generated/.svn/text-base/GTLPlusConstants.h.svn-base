@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@
 // Description:
 //   The Google+ API enables developers to build on top of the Google+ platform.
 // Documentation:
-//   http://developers.google.com/+/api/
+//   https://developers.google.com/+/api/
 
 #import <Foundation/Foundation.h>
 
@@ -36,7 +36,9 @@
 
 // Authorization scope
 // Know who you are on Google
-GTL_EXTERN NSString * const kGTLAuthScopePlusMe;  // "https://www.googleapis.com/auth/plus.me"
+GTL_EXTERN NSString * const kGTLAuthScopePlusMe;             // "https://www.googleapis.com/auth/plus.me"
+// View your email address
+GTL_EXTERN NSString * const kGTLAuthScopePlusUserinfoEmail;  // "https://www.googleapis.com/auth/userinfo.email"
 
 // Alt
 GTL_EXTERN NSString * const kGTLPlusAltJson;  // "json"
@@ -49,3 +51,7 @@ GTL_EXTERN NSString * const kGTLPlusCollectionResharers;  // "resharers"
 // OrderBy
 GTL_EXTERN NSString * const kGTLPlusOrderByBest;    // "best"
 GTL_EXTERN NSString * const kGTLPlusOrderByRecent;  // "recent"
+
+// SortOrder
+GTL_EXTERN NSString * const kGTLPlusSortOrderAscending;   // "ascending"
+GTL_EXTERN NSString * const kGTLPlusSortOrderDescending;  // "descending"

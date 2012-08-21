@@ -709,10 +709,9 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
   [dateComponents setHour:hour];
   [dateComponents setMinute:minute];
   [dateComponents setSecond:second];
+  [dateComponents setTimeZone:[NSTimeZone localTimeZone]];
 
-  GTLDateTime *dateTime = [GTLDateTime dateTimeWithDate:[NSDate date]
-                                               timeZone:[NSTimeZone systemTimeZone]];
-  [dateTime setDateComponents:dateComponents];
+  GTLDateTime *dateTime = [GTLDateTime dateTimeWithDateComponents:dateComponents];
   return dateTime;
 }
 
@@ -726,8 +725,8 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
 
     GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:calendarID];
     query.maxResults = 10;
-    query.timeMin = [startOfDay RFC3339String];
-    query.timeMax = [endOfDay RFC3339String];
+    query.timeMin = startOfDay;
+    query.timeMax = endOfDay;
 
     GTLServiceCalendar *service = self.calendarService;
     GTLServiceTicket *ticket = [service executeQuery:query
@@ -768,8 +767,8 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
     GTLQueryCalendar *query = [GTLQueryCalendar queryForFreebusyQuery];
     query.items = [NSArray arrayWithObject:requestItem];
     query.maxResults = 10;
-    query.timeMin = [startOfDay RFC3339String];
-    query.timeMax = [endOfDay RFC3339String];
+    query.timeMin = startOfDay;
+    query.timeMax = endOfDay;
 
     GTLServiceCalendar *service = self.calendarService;
     GTLServiceTicket *ticket = [service executeQuery:query
@@ -1172,7 +1171,7 @@ NSString *const kKeychainItemName = @"CalendarSample: Google Calendar";
     va_end(argList);
   }
   NSBeginAlertSheet(title, nil, nil, nil, [self window], nil, nil,
-                    nil, nil, result);
+                    nil, nil, @"%@", result);
 }
 
 #pragma mark Client ID Sheet

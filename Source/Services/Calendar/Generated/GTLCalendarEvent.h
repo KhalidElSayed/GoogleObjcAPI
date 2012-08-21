@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,11 +26,11 @@
 // Documentation:
 //   http://code.google.com/apis/calendar/v3/using.html
 // Classes:
-//   GTLCalendarEvent (0 custom class methods, 32 custom properties)
-//   GTLCalendarEventCreator (0 custom class methods, 2 custom properties)
+//   GTLCalendarEvent (0 custom class methods, 34 custom properties)
+//   GTLCalendarEventCreator (0 custom class methods, 4 custom properties)
 //   GTLCalendarEventExtendedProperties (0 custom class methods, 2 custom properties)
 //   GTLCalendarEventGadget (0 custom class methods, 8 custom properties)
-//   GTLCalendarEventOrganizer (0 custom class methods, 2 custom properties)
+//   GTLCalendarEventOrganizer (0 custom class methods, 4 custom properties)
 //   GTLCalendarEventReminders (0 custom class methods, 2 custom properties)
 //   GTLCalendarEventExtendedPropertiesPrivate (0 custom class methods, 0 custom properties)
 //   GTLCalendarEventExtendedPropertiesShared (0 custom class methods, 0 custom properties)
@@ -68,8 +68,8 @@
 // The attendees of the event.
 @property (retain) NSArray *attendees;  // of GTLCalendarEventAttendee
 
-// Whether attendees have been omitted from the event's representation. When
-// retrieving an event, this is due to a restriction specified by the
+// Whether attendees may have been omitted from the event's representation. When
+// retrieving an event, this may be due to a restriction specified by the
 // 'maxAttendee' query parameter. When updating an event, this can be used to
 // only update the participant's response. Optional. The default is False.
 @property (retain) NSNumber *attendeesOmitted;  // boolValue
@@ -88,9 +88,14 @@
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
 @property (copy) NSString *descriptionProperty;
 
-// The end time of the event. For a recurring event, this is the end time of the
-// first instance.
+// The (exclusive) end time of the event. For a recurring event, this is the end
+// time of the first instance.
 @property (retain) GTLCalendarEventDateTime *end;
+
+// Whether the end time is actually unspecified. An end time is still provided
+// for compatibility reasons, even if this attribute is set to True. The default
+// is False.
+@property (retain) NSNumber *endTimeUnspecified;  // boolValue
 
 // ETag of the resource.
 @property (copy) NSString *ETag;
@@ -129,9 +134,15 @@
 // Geographic location of the event as free-form text. Optional.
 @property (copy) NSString *location;
 
+// Whether this is a locked event copy where no changes can be made to the main
+// event fields "summary", "description", "location", "start", "end" or
+// "recurrence". The default is False. Read-Only.
+@property (retain) NSNumber *locked;  // boolValue
+
 // The organizer of the event. If the organizer is also an attendee, this is
 // indicated with a separate entry in 'attendees' with the 'organizer' field set
-// to True.
+// to True. To change the organizer, use the "move" operation. Read-only, except
+// when importing an event.
 @property (retain) GTLCalendarEventOrganizer *organizer;
 
 // For an instance of a recurring event, this is the time at which this event
@@ -157,8 +168,8 @@
 // Sequence number as per iCalendar.
 @property (retain) NSNumber *sequence;  // intValue
 
-// The start time of the event. For a recurring event, this is the start time of
-// the first instance.
+// The (inclusive) start time of the event. For a recurring event, this is the
+// start time of the first instance.
 @property (retain) GTLCalendarEventDateTime *start;
 
 // Status of the event. Optional. Possible values are:
@@ -206,6 +217,15 @@
 // The creator's email address, if available.
 @property (copy) NSString *email;
 
+// The creator's Profile ID, if available.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (copy) NSString *identifier;
+
+// Whether the creator corresponds to the calendar on which this copy of the
+// event appears. Read-only. The default is False.
+// Remapped to 'selfProperty' to avoid language reserved word 'self'.
+@property (retain) NSNumber *selfProperty;  // boolValue
+
 @end
 
 
@@ -218,7 +238,8 @@
 
 // Properties that are private to the copy of the event that appears on this
 // calendar.
-@property (retain) GTLCalendarEventExtendedPropertiesPrivate *private;
+// Remapped to 'privateProperty' to avoid language reserved word 'private'.
+@property (retain) GTLCalendarEventExtendedPropertiesPrivate *privateProperty;
 
 // Properties that are shared between copies of the event on other attendees'
 // calendars.
@@ -276,6 +297,15 @@
 
 // The organizer's email address, if available.
 @property (copy) NSString *email;
+
+// The organizer's Profile ID, if available.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (copy) NSString *identifier;
+
+// Whether the organizer corresponds to the calendar on which this copy of the
+// event appears. Read-only. The default is False.
+// Remapped to 'selfProperty' to avoid language reserved word 'self'.
+@property (retain) NSNumber *selfProperty;  // boolValue
 
 @end
 

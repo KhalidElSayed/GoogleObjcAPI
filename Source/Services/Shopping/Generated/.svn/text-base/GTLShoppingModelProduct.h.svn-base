@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,17 +20,18 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
-//   Search API for Shopping (shopping/v1)
+//   Search API For Shopping (shopping/v1)
 // Description:
-//   Lets you search over product data
+//   Lets you search over product data.
 // Documentation:
 //   http://code.google.com/apis/shopping/search/v1/getting_started.html
 // Classes:
-//   GTLShoppingModelProduct (0 custom class methods, 22 custom properties)
+//   GTLShoppingModelProduct (0 custom class methods, 35 custom properties)
 //   GTLShoppingModelProductAttributesItem (0 custom class methods, 5 custom properties)
-//   GTLShoppingModelProductAuthor (0 custom class methods, 5 custom properties)
-//   GTLShoppingModelProductImagesItem (0 custom class methods, 2 custom properties)
-//   GTLShoppingModelProductInventoriesItem (0 custom class methods, 9 custom properties)
+//   GTLShoppingModelProductAuthor (0 custom class methods, 2 custom properties)
+//   GTLShoppingModelProductImagesItem (0 custom class methods, 3 custom properties)
+//   GTLShoppingModelProductInternal4Item (0 custom class methods, 2 custom properties)
+//   GTLShoppingModelProductInventoriesItem (0 custom class methods, 15 custom properties)
 //   GTLShoppingModelProductVariantsItem (0 custom class methods, 1 custom properties)
 //   GTLShoppingModelProductImagesItemThumbnailsItem (0 custom class methods, 4 custom properties)
 
@@ -45,6 +46,7 @@
 @class GTLShoppingModelProductAuthor;
 @class GTLShoppingModelProductImagesItem;
 @class GTLShoppingModelProductImagesItemThumbnailsItem;
+@class GTLShoppingModelProductInternal4Item;
 @class GTLShoppingModelProductInventoriesItem;
 @class GTLShoppingModelProductVariantsItem;
 
@@ -82,7 +84,7 @@
 @property (copy) NSString *descriptionProperty;
 
 // Google id of product.
-@property (copy) NSString *googleId;
+@property (retain) NSNumber *googleId;  // unsignedLongLongValue
 
 // The first GTIN of the product. Deprecated in favor of "gtins".
 @property (copy) NSString *gtin;
@@ -92,6 +94,39 @@
 
 // Images of product.
 @property (retain) NSArray *images;  // of GTLShoppingModelProductImagesItem
+
+// Google Internal.
+@property (retain) NSArray *internal1;  // of NSString
+
+// Google Internal.
+@property (retain) NSArray *internal10;  // of NSString
+
+// Google Internal.
+@property (copy) NSString *internal12;
+
+// Google Internal.
+@property (retain) NSNumber *internal13;  // doubleValue
+
+// Google Internal.
+@property (retain) NSNumber *internal14;  // doubleValue
+
+// Google Internal.
+@property (retain) NSNumber *internal15;  // doubleValue
+
+// Google Internal.
+@property (copy) NSString *internal3;
+
+// Google Internal.
+@property (retain) NSArray *internal4;  // of GTLShoppingModelProductInternal4Item
+
+// Google Internal.
+@property (copy) NSString *internal6;
+
+// Google Internal.
+@property (retain) NSNumber *internal7;  // boolValue
+
+// Google Internal.
+@property (retain) NSArray *internal8;  // of NSString
 
 // Inventories of product.
 @property (retain) NSArray *inventories;  // of GTLShoppingModelProductInventoriesItem
@@ -105,6 +140,9 @@
 // RFC 3339 formatted modification time and date of product.
 @property (retain) GTLDateTime *modificationTime;
 
+// List of all the product's MPNs.
+@property (retain) NSArray *mpns;  // of NSString
+
 // Code to add to the page to render the +1 content.
 @property (copy) NSString *plusOne;
 
@@ -114,6 +152,9 @@
 // Whether this product matched the user query. Only set for the variant offers
 // (if any) attached to a product offer.
 @property (retain) NSNumber *queryMatched;  // boolValue
+
+// Google Internal
+@property (retain) NSNumber *score;  // floatValue
 
 // Title of product.
 @property (copy) NSString *title;
@@ -160,19 +201,10 @@
 @interface GTLShoppingModelProductAuthor : GTLObject
 
 // Account id of product author.
-@property (copy) NSString *accountId;
-
-// Aggregator id of product author.
-@property (copy) NSString *aggregatorId;
-
-// Email address of product author.
-@property (copy) NSString *email;
+@property (retain) NSNumber *accountId;  // unsignedLongLongValue
 
 // Name of product author.
 @property (copy) NSString *name;
-
-// URI of product author.
-@property (copy) NSString *uri;
 
 @end
 
@@ -187,8 +219,26 @@
 // Link to product image.
 @property (copy) NSString *link;
 
+@property (copy) NSString *status;
+
 // Thumbnails of product image.
 @property (retain) NSArray *thumbnails;  // of GTLShoppingModelProductImagesItemThumbnailsItem
+
+@end
+
+
+// ----------------------------------------------------------------------------
+//
+//   GTLShoppingModelProductInternal4Item
+//
+
+@interface GTLShoppingModelProductInternal4Item : GTLObject
+
+// Google Internal.
+@property (retain) NSNumber *confidence;  // doubleValue
+
+// Google Internal.
+@property (retain) NSNumber *node;  // intValue
 
 @end
 
@@ -215,8 +265,27 @@
 // Distance unit of product inventory.
 @property (copy) NSString *distanceUnit;
 
+// Number of months for installment price.
+@property (retain) NSNumber *installmentMonths;  // intValue
+
+// Installment price of product inventory.
+@property (retain) NSNumber *installmentPrice;  // floatValue
+
+// Original price of product inventory. Only returned for products that are on
+// sale.
+@property (retain) NSNumber *originalPrice;  // floatValue
+
 // Price of product inventory.
 @property (retain) NSNumber *price;  // floatValue
+
+// Sale end date.
+@property (retain) GTLDateTime *saleEndDate;
+
+// Sale price of product inventory.
+@property (retain) NSNumber *salePrice;  // floatValue
+
+// Sale start date.
+@property (retain) GTLDateTime *saleStartDate;
 
 // Shipping cost of product inventory.
 @property (retain) NSNumber *shipping;  // floatValue

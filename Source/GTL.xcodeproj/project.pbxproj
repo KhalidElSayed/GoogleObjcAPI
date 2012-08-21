@@ -22,12 +22,7 @@
 		4F1817511134982E009F7FD1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F18174C1134982E009F7FD1 /* Security.framework */; };
 		4F1AD90D0B71607400DC0485 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AD90C0B71607400DC0485 /* main.m */; };
 		4F1ADAB10B7168F300DC0485 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		4F244943121F3C2B00FEE1DA /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F244940121F3C2B00FEE1DA /* SBJSON.m */; settings = {COMPILER_FLAGS = "-Wno-parentheses"; }; };
 		4F244944121F3C2B00FEE1DA /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F24493A121F3C2B00FEE1DA /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F244949121F3C2B00FEE1DA /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F24493F121F3C2B00FEE1DA /* SBJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F24494A121F3C2B00FEE1DA /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F244940121F3C2B00FEE1DA /* SBJSON.m */; settings = {COMPILER_FLAGS = "-Wno-parentheses"; }; };
-		4F24494D121F3C2B00FEE1DA /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F244940121F3C2B00FEE1DA /* SBJSON.m */; settings = {COMPILER_FLAGS = "-Wno-parentheses"; }; };
-		4F244950121F3C2B00FEE1DA /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F244940121F3C2B00FEE1DA /* SBJSON.m */; settings = {COMPILER_FLAGS = "-Wno-parentheses"; }; };
 		4F2449B7121F3E2A00FEE1DA /* GTMHTTPFetcherTestServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2449B4121F3E2A00FEE1DA /* GTMHTTPFetcherTestServer.m */; };
 		4F2449B8121F3E2A00FEE1DA /* GTMHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2449B6121F3E2A00FEE1DA /* GTMHTTPServer.m */; };
 		4F31A3D7142AA6BA00A58EAD /* TaskBatchPage1a.request.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F31A3D3142AA6BA00A58EAD /* TaskBatchPage1a.request.txt */; };
@@ -129,10 +124,32 @@
 		4F8DB6F513FDC0F50001DD6C /* GTMOAuth2ViewControllerTouch.h in Copy Static Library Headers */ = {isa = PBXBuildFile; fileRef = 4F697FBB131C1A6800A5AB6A /* GTMOAuth2ViewControllerTouch.h */; };
 		4F8DB6F613FDC0F50001DD6C /* GTMOAuth2WindowController.h in Copy Static Library Headers */ = {isa = PBXBuildFile; fileRef = 4F697FB4131C1A5800A5AB6A /* GTMOAuth2WindowController.h */; };
 		4F8DB6F713FDC0F50001DD6C /* GTMReadMonitorInputStream.h in Copy Static Library Headers */ = {isa = PBXBuildFile; fileRef = 4F8DB61713FDAC160001DD6C /* GTMReadMonitorInputStream.h */; };
+		4F934E671512712100C4EA34 /* GTLBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F934E651512712100C4EA34 /* GTLBase64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F934E681512712100C4EA34 /* GTLBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F934E661512712100C4EA34 /* GTLBase64.m */; };
+		4F934E691512712100C4EA34 /* GTLBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F934E661512712100C4EA34 /* GTLBase64.m */; };
+		4F934E6A1512712100C4EA34 /* GTLBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F934E661512712100C4EA34 /* GTLBase64.m */; };
+		4F934E6B1512712100C4EA34 /* GTLBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F934E661512712100C4EA34 /* GTLBase64.m */; };
+		4F934E6C1512713000C4EA34 /* GTLBase64.h in Copy Static Library Headers */ = {isa = PBXBuildFile; fileRef = 4F934E651512712100C4EA34 /* GTLBase64.h */; };
+		4F934F51151286FE00C4EA34 /* GTLBase64Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F934F50151286FE00C4EA34 /* GTLBase64Test.m */; };
 		4F9F7E3911F5103B0033A2C1 /* GTLDateTimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F7E3811F5103B0033A2C1 /* GTLDateTimeTest.m */; };
 		4F9F7E3C11F510430033A2C1 /* GTLFrameworkTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F7E3A11F510430033A2C1 /* GTLFrameworkTest.m */; };
 		4F9F7E3D11F510430033A2C1 /* GTLUtilitiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F7E3B11F510430033A2C1 /* GTLUtilitiesTest.m */; };
 		4FCC7A1D11EFD9EA0097924C /* GTLServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC7A1C11EFD9EA0097924C /* GTLServiceTest.m */; };
+		4FDB9FBF152BA565004A2830 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDB9FAE152BA565004A2830 /* SBJsonBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FDB9FC0152BA565004A2830 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FAF152BA565004A2830 /* SBJsonBase.m */; };
+		4FDB9FC1152BA565004A2830 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FAF152BA565004A2830 /* SBJsonBase.m */; };
+		4FDB9FC2152BA565004A2830 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FAF152BA565004A2830 /* SBJsonBase.m */; };
+		4FDB9FC3152BA565004A2830 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FAF152BA565004A2830 /* SBJsonBase.m */; };
+		4FDB9FC4152BA565004A2830 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDB9FB0152BA565004A2830 /* SBJsonParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FDB9FC5152BA565004A2830 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FB1152BA565004A2830 /* SBJsonParser.m */; };
+		4FDB9FC6152BA565004A2830 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FB1152BA565004A2830 /* SBJsonParser.m */; };
+		4FDB9FC7152BA565004A2830 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FB1152BA565004A2830 /* SBJsonParser.m */; };
+		4FDB9FC8152BA565004A2830 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FB1152BA565004A2830 /* SBJsonParser.m */; };
+		4FDB9FC9152BA565004A2830 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDB9FB2152BA565004A2830 /* SBJsonWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FDB9FCA152BA565004A2830 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FB3152BA565004A2830 /* SBJsonWriter.m */; };
+		4FDB9FCB152BA565004A2830 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FB3152BA565004A2830 /* SBJsonWriter.m */; };
+		4FDB9FCC152BA565004A2830 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FB3152BA565004A2830 /* SBJsonWriter.m */; };
+		4FDB9FCD152BA565004A2830 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB9FB3152BA565004A2830 /* SBJsonWriter.m */; };
 		4FDE223913848173005AEFAA /* GTLFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE223313848173005AEFAA /* GTLFramework.m */; };
 		4FDE223A13848173005AEFAA /* GTLJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE223513848173005AEFAA /* GTLJSONParser.m */; };
 		4FDE223B13848173005AEFAA /* GTLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE223813848173005AEFAA /* GTLUtilities.m */; };
@@ -217,6 +234,7 @@
 			dstPath = Headers;
 			dstSubfolderSpec = 16;
 			files = (
+				4F934E6C1512713000C4EA34 /* GTLBase64.h in Copy Static Library Headers */,
 				4F8DB6DE13FDC0F50001DD6C /* GTLBatchQuery.h in Copy Static Library Headers */,
 				4F8DB6DF13FDC0F50001DD6C /* GTLBatchResult.h in Copy Static Library Headers */,
 				4F8DB6E013FDC0F50001DD6C /* GTLDateTime.h in Copy Static Library Headers */,
@@ -265,8 +283,6 @@
 		4F1AD9020B71603F00DC0485 /* DevelopmentTestTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DevelopmentTestTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1AD90C0B71607400DC0485 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Tests/main.m; sourceTree = "<group>"; };
 		4F24493A121F3C2B00FEE1DA /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = JSON/JSON.h; sourceTree = "<group>"; };
-		4F24493F121F3C2B00FEE1DA /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJSON.h; path = JSON/SBJSON.h; sourceTree = "<group>"; };
-		4F244940121F3C2B00FEE1DA /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJSON.m; path = JSON/SBJSON.m; sourceTree = "<group>"; };
 		4F2449B3121F3E2A00FEE1DA /* GTMHTTPFetcherTestServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPFetcherTestServer.h; path = HTTPFetcher/Tests/GTMHTTPFetcherTestServer.h; sourceTree = "<group>"; };
 		4F2449B4121F3E2A00FEE1DA /* GTMHTTPFetcherTestServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMHTTPFetcherTestServer.m; path = HTTPFetcher/Tests/GTMHTTPFetcherTestServer.m; sourceTree = "<group>"; };
 		4F2449B5121F3E2A00FEE1DA /* GTMHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMHTTPServer.h; path = HTTPFetcher/Tests/GTMHTTPServer.h; sourceTree = "<group>"; };
@@ -318,10 +334,20 @@
 		4F76C07013B1208F009154C6 /* TaskPage1d.response.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TaskPage1d.response.txt; path = Tests/Data/TaskPage1d.response.txt; sourceTree = "<group>"; };
 		4F8DB61713FDAC160001DD6C /* GTMReadMonitorInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMReadMonitorInputStream.h; path = HTTPFetcher/GTMReadMonitorInputStream.h; sourceTree = SOURCE_ROOT; };
 		4F8DB61813FDAC160001DD6C /* GTMReadMonitorInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMReadMonitorInputStream.m; path = HTTPFetcher/GTMReadMonitorInputStream.m; sourceTree = SOURCE_ROOT; };
+		4F934E651512712100C4EA34 /* GTLBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLBase64.h; path = Utilities/GTLBase64.h; sourceTree = "<group>"; };
+		4F934E661512712100C4EA34 /* GTLBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLBase64.m; path = Utilities/GTLBase64.m; sourceTree = "<group>"; };
+		4F934F50151286FE00C4EA34 /* GTLBase64Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLBase64Test.m; path = Tests/GTLBase64Test.m; sourceTree = "<group>"; };
 		4F9F7E3811F5103B0033A2C1 /* GTLDateTimeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLDateTimeTest.m; path = Tests/GTLDateTimeTest.m; sourceTree = "<group>"; };
 		4F9F7E3A11F510430033A2C1 /* GTLFrameworkTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLFrameworkTest.m; path = Tests/GTLFrameworkTest.m; sourceTree = "<group>"; };
 		4F9F7E3B11F510430033A2C1 /* GTLUtilitiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLUtilitiesTest.m; path = Tests/GTLUtilitiesTest.m; sourceTree = "<group>"; };
 		4FCC7A1C11EFD9EA0097924C /* GTLServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLServiceTest.m; path = Tests/GTLServiceTest.m; sourceTree = "<group>"; };
+		4FDB9FA9152BA565004A2830 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = JSON/JSON.h; sourceTree = "<group>"; };
+		4FDB9FAE152BA565004A2830 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = JSON/SBJsonBase.h; sourceTree = "<group>"; };
+		4FDB9FAF152BA565004A2830 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonBase.m; path = JSON/SBJsonBase.m; sourceTree = "<group>"; };
+		4FDB9FB0152BA565004A2830 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = JSON/SBJsonParser.h; sourceTree = "<group>"; };
+		4FDB9FB1152BA565004A2830 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = JSON/SBJsonParser.m; sourceTree = "<group>"; };
+		4FDB9FB2152BA565004A2830 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = JSON/SBJsonWriter.h; sourceTree = "<group>"; };
+		4FDB9FB3152BA565004A2830 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = JSON/SBJsonWriter.m; sourceTree = "<group>"; };
 		4FDE223213848173005AEFAA /* GTLFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLFramework.h; path = Utilities/GTLFramework.h; sourceTree = "<group>"; };
 		4FDE223313848173005AEFAA /* GTLFramework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLFramework.m; path = Utilities/GTLFramework.m; sourceTree = "<group>"; };
 		4FDE223413848173005AEFAA /* GTLJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLJSONParser.h; path = Utilities/GTLJSONParser.h; sourceTree = "<group>"; };
@@ -470,8 +496,13 @@
 			isa = PBXGroup;
 			children = (
 				4F24493A121F3C2B00FEE1DA /* JSON.h */,
-				4F24493F121F3C2B00FEE1DA /* SBJSON.h */,
-				4F244940121F3C2B00FEE1DA /* SBJSON.m */,
+				4FDB9FA9152BA565004A2830 /* JSON.h */,
+				4FDB9FAE152BA565004A2830 /* SBJsonBase.h */,
+				4FDB9FAF152BA565004A2830 /* SBJsonBase.m */,
+				4FDB9FB0152BA565004A2830 /* SBJsonParser.h */,
+				4FDB9FB1152BA565004A2830 /* SBJsonParser.m */,
+				4FDB9FB2152BA565004A2830 /* SBJsonWriter.h */,
+				4FDB9FB3152BA565004A2830 /* SBJsonWriter.m */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -544,6 +575,8 @@
 				4FDE223613848173005AEFAA /* GTLTargetNamespace.h */,
 				4FDE223713848173005AEFAA /* GTLUtilities.h */,
 				4FDE223813848173005AEFAA /* GTLUtilities.m */,
+				4F934E651512712100C4EA34 /* GTLBase64.h */,
+				4F934E661512712100C4EA34 /* GTLBase64.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -596,6 +629,7 @@
 				F4CC6A101239450100522D45 /* GTLQueryTest.m */,
 				4FCC7A1C11EFD9EA0097924C /* GTLServiceTest.m */,
 				4F9F7E3B11F510430033A2C1 /* GTLUtilitiesTest.m */,
+				4F934F50151286FE00C4EA34 /* GTLBase64Test.m */,
 				4F5CC8921381ED1F00D1D4CF /* Services */,
 				4FCC7A3E11EFDB7E0097924C /* Data */,
 				4FCC7A2211EFDA090097924C /* Server */,
@@ -685,7 +719,9 @@
 			files = (
 				4F3DE995119CCE49006926D1 /* GTLDefines.h in Headers */,
 				4F244944121F3C2B00FEE1DA /* JSON.h in Headers */,
-				4F244949121F3C2B00FEE1DA /* SBJSON.h in Headers */,
+				4FDB9FBF152BA565004A2830 /* SBJsonBase.h in Headers */,
+				4FDB9FC4152BA565004A2830 /* SBJsonParser.h in Headers */,
+				4FDB9FC9152BA565004A2830 /* SBJsonWriter.h in Headers */,
 				4F697FA7131C1A4100A5AB6A /* GTMOAuth2Authentication.h in Headers */,
 				4F697FA9131C1A4100A5AB6A /* GTMOAuth2SignIn.h in Headers */,
 				4F697FB7131C1A5800A5AB6A /* GTMOAuth2WindowController.h in Headers */,
@@ -710,6 +746,7 @@
 				4FDE226F1384818E005AEFAA /* GTLService.h in Headers */,
 				4F0C4FBC13CFA7E5007E5E92 /* GTLUploadParameters.h in Headers */,
 				4F8DB61913FDAC160001DD6C /* GTMReadMonitorInputStream.h in Headers */,
+				4F934E671512712100C4EA34 /* GTLBase64.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,7 +915,6 @@
 				4F9F7E3911F5103B0033A2C1 /* GTLDateTimeTest.m in Sources */,
 				4F9F7E3C11F510430033A2C1 /* GTLFrameworkTest.m in Sources */,
 				4F9F7E3D11F510430033A2C1 /* GTLUtilitiesTest.m in Sources */,
-				4F24494D121F3C2B00FEE1DA /* SBJSON.m in Sources */,
 				4F2449B7121F3E2A00FEE1DA /* GTMHTTPFetcherTestServer.m in Sources */,
 				4F2449B8121F3E2A00FEE1DA /* GTMHTTPServer.m in Sources */,
 				F4CC6A111239450100522D45 /* GTLQueryTest.m in Sources */,
@@ -912,6 +948,11 @@
 				F40E736C138A03CA00EE3F02 /* GTLTasksTasks.m in Sources */,
 				4F0C4FBF13CFA7E5007E5E92 /* GTLUploadParameters.m in Sources */,
 				4F8DB61C13FDAC160001DD6C /* GTMReadMonitorInputStream.m in Sources */,
+				4F934E6A1512712100C4EA34 /* GTLBase64.m in Sources */,
+				4F934F51151286FE00C4EA34 /* GTLBase64Test.m in Sources */,
+				4FDB9FC2152BA565004A2830 /* SBJsonBase.m in Sources */,
+				4FDB9FC7152BA565004A2830 /* SBJsonParser.m in Sources */,
+				4FDB9FCC152BA565004A2830 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,7 +961,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F1AD90D0B71607400DC0485 /* main.m in Sources */,
-				4F244950121F3C2B00FEE1DA /* SBJSON.m in Sources */,
 				4F697FAF131C1A4100A5AB6A /* GTMOAuth2Authentication.m in Sources */,
 				4F697FC2131C1A7A00A5AB6A /* GTMOAuth2SignIn.m in Sources */,
 				4F698075131C1F1D00A5AB6A /* GTMGatherInputStream.m in Sources */,
@@ -943,6 +983,10 @@
 				4FDE22801384818E005AEFAA /* GTLService.m in Sources */,
 				4F0C4FC013CFA7E5007E5E92 /* GTLUploadParameters.m in Sources */,
 				4F8DB61D13FDAC160001DD6C /* GTMReadMonitorInputStream.m in Sources */,
+				4F934E6B1512712100C4EA34 /* GTLBase64.m in Sources */,
+				4FDB9FC3152BA565004A2830 /* SBJsonBase.m in Sources */,
+				4FDB9FC8152BA565004A2830 /* SBJsonParser.m in Sources */,
+				4FDB9FCD152BA565004A2830 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,7 +994,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F244943121F3C2B00FEE1DA /* SBJSON.m in Sources */,
 				4F697FAB131C1A4100A5AB6A /* GTMOAuth2Authentication.m in Sources */,
 				4F697FAC131C1A4100A5AB6A /* GTMOAuth2SignIn.m in Sources */,
 				4F697FBE131C1A6800A5AB6A /* GTMOAuth2ViewControllerTouch.m in Sources */,
@@ -974,6 +1017,10 @@
 				4FDE22781384818E005AEFAA /* GTLService.m in Sources */,
 				4F0C4FBE13CFA7E5007E5E92 /* GTLUploadParameters.m in Sources */,
 				4F8DB61B13FDAC160001DD6C /* GTMReadMonitorInputStream.m in Sources */,
+				4F934E691512712100C4EA34 /* GTLBase64.m in Sources */,
+				4FDB9FC1152BA565004A2830 /* SBJsonBase.m in Sources */,
+				4FDB9FC6152BA565004A2830 /* SBJsonParser.m in Sources */,
+				4FDB9FCB152BA565004A2830 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,7 +1028,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F24494A121F3C2B00FEE1DA /* SBJSON.m in Sources */,
 				4F697FA8131C1A4100A5AB6A /* GTMOAuth2Authentication.m in Sources */,
 				4F697FAA131C1A4100A5AB6A /* GTMOAuth2SignIn.m in Sources */,
 				4F697FB8131C1A5800A5AB6A /* GTMOAuth2WindowController.m in Sources */,
@@ -1005,6 +1051,10 @@
 				4FDE22701384818E005AEFAA /* GTLService.m in Sources */,
 				4F0C4FBD13CFA7E5007E5E92 /* GTLUploadParameters.m in Sources */,
 				4F8DB61A13FDAC160001DD6C /* GTMReadMonitorInputStream.m in Sources */,
+				4F934E681512712100C4EA34 /* GTLBase64.m in Sources */,
+				4FDB9FC0152BA565004A2830 /* SBJsonBase.m in Sources */,
+				4FDB9FC5152BA565004A2830 /* SBJsonParser.m in Sources */,
+				4FDB9FCA152BA565004A2830 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,7 +1091,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_CFLAGS = "-DDEBUG=1";
 				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Werror",
@@ -1074,7 +1123,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Werror",
@@ -1090,6 +1138,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(value)",
 					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
@@ -1121,6 +1170,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(value)",
 					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
@@ -1156,7 +1206,6 @@
 				INFOPLIST_FILE = "Resources/DevTestTool-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = DevelopmentTestTool;
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1168,7 +1217,6 @@
 				INFOPLIST_FILE = "Resources/DevTestTool-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = DevelopmentTestTool;
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1183,7 +1231,6 @@
 				);
 				PRODUCT_NAME = GTLTouchStaticLib;
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1198,13 +1245,14 @@
 				);
 				PRODUCT_NAME = GTLTouchStaticLib;
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
 		4F38F7120B66EF2C00B24B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -1220,7 +1268,6 @@
 					AppKit,
 				);
 				PRODUCT_NAME = GTL;
-				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
@@ -1228,6 +1275,8 @@
 		4F38F7130B66EF2C00B24B81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -1243,7 +1292,6 @@
 					AppKit,
 				);
 				PRODUCT_NAME = GTL;
-				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 			};
 			name = Release;

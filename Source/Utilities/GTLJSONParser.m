@@ -21,7 +21,8 @@
 
 // We can assume NSJSONSerialization is present on Mac OS X 10.7 and iOS 5
 #if !defined(GTL_REQUIRES_NSJSONSERIALIZATION)
-#if (MAC_OS_X_VERSION_MIN_REQUIRED >= 1070) || (__IPHONE_OS_VERSION_MIN_REQUIRED >= 50000)
+#if (!TARGET_OS_IPHONE && (MAC_OS_X_VERSION_MIN_REQUIRED >= 1070)) || \
+    (TARGET_OS_IPHONE && (__IPHONE_OS_VERSION_MIN_REQUIRED >= 50000))
 #define GTL_REQUIRES_NSJSONSERIALIZATION 1
 #endif
 #endif
@@ -59,29 +60,34 @@
 + (NSString*)stringWithObject:(id)obj
                 humanReadable:(BOOL)humanReadable
                         error:(NSError**)error {
-#if GTL_REQUIRES_NSJSONSERIALIZATION
-  NSData *data = [NSJSONSerialization dataWithJSONObject:obj
-                                        options:NSJSONWritingPrettyPrinted
-                                          error:error];
+  NSData *data = [self dataWithObject:obj
+                        humanReadable:humanReadable
+                                error:error];
   if (data) {
     NSString *jsonStr = [[[NSString alloc] initWithData:data
                                                encoding:NSUTF8StringEncoding] autorelease];
     return jsonStr;
   }
   return nil;
+}
+
++ (NSData *)dataWithObject:(id)obj
+             humanReadable:(BOOL)humanReadable
+                     error:(NSError**)error {
+  const NSUInteger kOpts = humanReadable ? (1UL << 0) : 0; // NSJSONWritingPrettyPrinted
+
+#if GTL_REQUIRES_NSJSONSERIALIZATION
+  NSData *data = [NSJSONSerialization dataWithJSONObject:obj
+                                                 options:kOpts
+                                                   error:error];
+  return data;
 #else
   Class serializer = NSClassFromString(@"NSJSONSerialization");
   if (serializer) {
-    const NSUInteger kOpts = humanReadable ? (1UL << 0) : 0; // NSJSONWritingPrettyPrinted
     NSData *data = [serializer dataWithJSONObject:obj
-                                  options:kOpts
-                                    error:error];
-    if (data) {
-      NSString *jsonStr = [[[NSString alloc] initWithData:data
-                                                 encoding:NSUTF8StringEncoding] autorelease];
-      return jsonStr;
-    }
-    return nil;
+                                          options:kOpts
+                                            error:error];
+    return data;
   } else {
     Class jsonWriteClass = NSClassFromString(@"SBJsonWriter");
     if (!jsonWriteClass) {
@@ -94,7 +100,8 @@
     [writer setHumanReadable:humanReadable];
     NSString *jsonStr = [writer stringWithObject:obj
                                            error:error];
-    return jsonStr;
+    NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    return data;
   }
 #endif
 }

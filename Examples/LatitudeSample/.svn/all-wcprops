@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 46
-/svn/!svn/ver/37/trunk/Examples/LatitudeSample
+V 47
+/svn/!svn/ver/169/trunk/Examples/LatitudeSample
 END
 LatitudeSampleWindowController.h
 K 25
@@ -18,8 +18,8 @@ END
 LatitudeSampleWindowController.m
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/!svn/ver/37/trunk/Examples/LatitudeSample/LatitudeSampleWindowController.m
+V 80
+/svn/!svn/ver/169/trunk/Examples/LatitudeSample/LatitudeSampleWindowController.m
 END
 Info.plist
 K 25

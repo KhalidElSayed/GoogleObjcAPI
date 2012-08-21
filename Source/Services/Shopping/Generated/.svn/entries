@@ -1,14 +1,14 @@
 10
 
 dir
-134
+201
 http://google-api-objectivec-client.googlecode.com/svn/trunk/Source/Services/Shopping/Generated
 http://google-api-objectivec-client.googlecode.com/svn
 
 
 
-2011-12-23T01:30:55.588692Z
-133
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-697795a7134c810eb61338baf62853f3
-2011-11-04T00:45:42.005736Z
-88
+2012-08-20T23:32:40.000000Z
+2b902e338e840bfc48724b50a2b88bcc
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -58,7 +58,7 @@ grobbins@google.com
 
 
 
-6114
+6097
 
 GTLShoppingModelDebug.m
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-7ff615ba3edce8d29f051c7acaf02f6e
-2011-10-17T20:28:12.299555Z
-80
+2012-08-20T23:32:40.000000Z
+923cd24716dfc2bebd04fe6e1fa8f1d6
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -92,7 +92,7 @@ grobbins@google.com
 
 
 
-1910
+1942
 
 GTLShoppingConstants.h
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-576231e1ab38e70cd0910d7f52361ff4
-2011-08-17T00:31:36.392047Z
-25
+2012-08-20T23:32:40.000000Z
+669f47a07740aff3e8f467e4765e76d1
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -126,7 +126,41 @@ grobbins@google.com
 
 
 
-1448
+1273
+
+GTLShoppingModelRecommendations.m
+file
+
+
+
+
+2012-08-20T23:32:40.000000Z
+959f9be7f3b22ae37bcee5f9682a04e8
+2012-06-22T23:22:57.178679Z
+173
+grobbins@google.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1976
 
 GTLShopping.h
 file
@@ -134,10 +168,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-239213ed5542069a398d3293f0a07ab4
-2011-10-17T20:28:12.299555Z
-80
+2012-08-20T23:32:40.000000Z
+04b565d0f43c775abafe4fd3cf56043e
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -160,7 +194,7 @@ grobbins@google.com
 
 
 
-1237
+1282
 
 GTLShoppingProduct.h
 file
@@ -168,10 +202,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-751c105b9b9821b3de09019a3f3af050
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:40.000000Z
+4abd4c076cfd74bfd1c0a0a07c7337d5
+2012-07-11T20:51:19.273386Z
+189
 grobbins@google.com
 
 
@@ -194,7 +228,7 @@ grobbins@google.com
 
 
 
-3242
+2262
 
 GTLShoppingConstants.m
 file
@@ -202,10 +236,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-dc7f3e5e208f252c18bf39414df8d3fe
-2011-08-17T00:31:36.392047Z
-25
+2012-08-20T23:32:40.000000Z
+eb693a2fb10f7fb70f605d62a8f7913d
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -228,7 +262,7 @@ grobbins@google.com
 
 
 
-1313
+1139
 
 GTLShoppingProduct.m
 file
@@ -236,10 +270,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-10cea916121f27db12e5533eac12ffc2
-2011-10-21T21:36:18.320385Z
-84
+2012-08-20T23:32:40.000000Z
+cd407b111a0f6b8117f308d9c433cbb1
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -262,7 +296,7 @@ grobbins@google.com
 
 
 
-2914
+2020
 
 GTLShoppingModelCategory.h
 file
@@ -270,10 +304,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-785e976784176e34e9c4b3c0bd67c826
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:40.000000Z
+5f3d990036e5a434b4211713784ecca1
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -296,7 +330,7 @@ grobbins@google.com
 
 
 
-1683
+1684
 
 GTLServiceShopping.h
 file
@@ -304,10 +338,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-69127d7130225c222aafb62d085a1e81
-2011-08-23T19:12:40.725509Z
-28
+2012-08-20T23:32:40.000000Z
+7a3c8712b7999a87dff97a219840add8
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -330,7 +364,7 @@ grobbins@google.com
 
 
 
-2120
+2121
 
 GTLShoppingModelProduct.h
 file
@@ -338,10 +372,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-efe6d73cc0757daec3b74cd58952c0a2
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:40.000000Z
+3b2499a74db4cdf83bff0b161395bf7e
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -364,41 +398,7 @@ grobbins@google.com
 
 
 
-7902
-
-GTLShoppingModelCategory.m
-file
-
-
-
-
-2012-01-11T13:36:42.000000Z
-e4c95183115efb2bdf1e3dfae8076f14
-2011-08-17T00:31:36.392047Z
-25
-grobbins@google.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1692
+9825
 
 GTLShoppingProducts.h
 file
@@ -406,10 +406,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-201378af4cd4dc703adc26525727398a
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:40.000000Z
+9535ec454ca80b9ff659e2d11219e4c5
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -432,7 +432,41 @@ grobbins@google.com
 
 
 
-8960
+8595
+
+GTLShoppingModelCategory.m
+file
+
+
+
+
+2012-08-20T23:32:40.000000Z
+d4b9c539a8b61fd91e9be5608caef341
+2012-06-22T23:22:57.178679Z
+173
+grobbins@google.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1693
 
 GTLServiceShopping.m
 file
@@ -440,10 +474,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-e212cf1d91949ad3784eea243e89e2f4
-2011-12-16T21:13:04.166932Z
-131
+2012-08-20T23:32:40.000000Z
+0eb2526f8bd90a5898a7c66f1d4d0649
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -466,7 +500,7 @@ grobbins@google.com
 
 
 
-2113
+2177
 
 GTLQueryShopping.h
 file
@@ -474,10 +508,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-fc083a9013c8282c1dcc29d5bf44e9a6
-2011-12-23T01:30:55.588692Z
-133
+2012-08-20T23:32:40.000000Z
+eada9d2fb82b2fc239f72a6f51d76fac
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -500,7 +534,7 @@ grobbins@google.com
 
 
 
-12939
+13466
 
 GTLShoppingModelProduct.m
 file
@@ -508,10 +542,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-1bd2391893fba5880aa2208256b57806
-2011-11-09T02:50:58.417516Z
-93
+2012-08-20T23:32:40.000000Z
+d9948c634624d1ffedb82f706de4330c
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -534,7 +568,7 @@ grobbins@google.com
 
 
 
-4424
+5183
 
 GTLShoppingModelDebug.h
 file
@@ -542,10 +576,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-dc4dee7d8a8cf80ef4907ad2d11d38e0
-2011-12-12T22:00:16.502331Z
-124
+2012-08-20T23:32:40.000000Z
+f77883f1c7f5bfb6a1e86717f3bb0b27
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -568,7 +602,41 @@ grobbins@google.com
 
 
 
-2311
+2439
+
+GTLShoppingModelRecommendations.h
+file
+
+
+
+
+2012-08-20T23:32:40.000000Z
+6ed3c3090633aec3d63950645b7b8bc1
+2012-06-22T23:22:57.178679Z
+173
+grobbins@google.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2290
 
 GTLShoppingProducts.m
 file
@@ -576,10 +644,10 @@ file
 
 
 
-2012-01-11T13:36:42.000000Z
-ec050216bf50ebd970a8b9e1b8ed701e
-2011-10-21T21:36:18.320385Z
-84
+2012-08-20T23:32:40.000000Z
+346673b9f8381dc1acc3686dd4febfd3
+2012-06-22T23:22:57.178679Z
+173
 grobbins@google.com
 
 
@@ -602,5 +670,5 @@ grobbins@google.com
 
 
 
-5432
+5202
 

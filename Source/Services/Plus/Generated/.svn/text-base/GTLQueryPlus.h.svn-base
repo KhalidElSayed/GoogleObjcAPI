@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@
 // Description:
 //   The Google+ API enables developers to build on top of the Google+ platform.
 // Documentation:
-//   http://developers.google.com/+/api/
+//   https://developers.google.com/+/api/
 // Classes:
-//   GTLQueryPlus (8 custom class methods, 11 custom properties)
+//   GTLQueryPlus (8 custom class methods, 12 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLQuery.h"
@@ -55,6 +55,7 @@
 @property (copy) NSString *orderBy;
 @property (copy) NSString *pageToken;
 @property (copy) NSString *query;
+@property (copy) NSString *sortOrder;
 @property (copy) NSString *userId;
 
 #pragma mark -
@@ -150,6 +151,10 @@
 //   pageToken: The continuation token, used to page through large result sets.
 //     To get the next page of results, set this parameter to the value of
 //     "nextPageToken" from the previous response.
+//   sortOrder: The order in which to sort the list of comments. (Default
+//     kGTLPlusSortOrderAscending)
+//      kGTLPlusSortOrderAscending: Sort oldest comments first.
+//      kGTLPlusSortOrderDescending: Sort newest comments first.
 //  Authorization scope(s):
 //   kGTLAuthScopePlusMe
 // Fetches a GTLPlusCommentFeed.
@@ -166,6 +171,7 @@
 //     can be used to indicate the authenticated user.
 //  Authorization scope(s):
 //   kGTLAuthScopePlusMe
+//   kGTLAuthScopePlusUserinfoEmail
 // Fetches a GTLPlusPerson.
 + (id)queryForPeopleGetWithUserId:(NSString *)userId;
 
@@ -194,7 +200,8 @@
 // Method: plus.people.search
 // Search all public profiles.
 //  Required:
-//   query: Full-text search query string.
+//   query: Specify a query string for full text search of public text in all
+//     profiles.
 //  Optional:
 //   language: Specify the preferred language to search with. See search
 //     language codes for available values.

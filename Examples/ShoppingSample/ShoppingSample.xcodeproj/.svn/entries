@@ -1,14 +1,14 @@
 10
 
 dir
-134
+201
 http://google-api-objectivec-client.googlecode.com/svn/trunk/Examples/ShoppingSample/ShoppingSample.xcodeproj
 http://google-api-objectivec-client.googlecode.com/svn
 
 
 
-2011-08-16T23:18:18.014234Z
-23
+2012-05-10T20:34:24.463283Z
+154
 grobbins@google.com
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-11T13:36:48.000000Z
-4fad9db1af8386bdda17f40407ddda6d
-2011-08-16T23:18:18.014234Z
-23
+2012-08-20T23:32:43.000000Z
+880e1058bc01ec46c5e0318943b61777
+2012-05-10T20:34:24.463283Z
+154
 grobbins@google.com
 
 
@@ -58,5 +58,5 @@ grobbins@google.com
 
 
 
-25559
+26151
 

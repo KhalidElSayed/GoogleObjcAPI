@@ -1,14 +1,14 @@
 10
 
 dir
-76
+92
 http://gtm-oauth2.googlecode.com/svn/trunk/Source
 http://gtm-oauth2.googlecode.com/svn
 
 
 
-2011-12-12T16:50:57.957123Z
-76
+2012-08-11T03:08:28.046869Z
+92
 grobbins@google.com
 
 
@@ -35,10 +35,10 @@ file
 
 
 
-2012-01-11T13:36:58.000000Z
-da7feb7a03dc466fd89ccf56412b1414
-2011-11-08T21:01:23.754976Z
-73
+2012-08-20T23:32:50.000000Z
+5e9f52dbb4121aa8e40ef209c67f7417
+2012-04-04T00:20:31.877641Z
+85
 grobbins@google.com
 
 
@@ -61,7 +61,7 @@ grobbins@google.com
 
 
 
-12656
+12892
 
 Touch
 dir
@@ -72,10 +72,10 @@ file
 
 
 
-2012-01-11T13:36:58.000000Z
-546a76e005b39eb3d0936c161bd70ce1
-2011-11-01T17:51:56.163697Z
-72
+2012-08-20T23:32:50.000000Z
+33dca4e039ab7affd718962fb9b1ec97
+2012-07-28T00:59:42.100910Z
+90
 grobbins@google.com
 
 
@@ -98,7 +98,7 @@ grobbins@google.com
 
 
 
-37128
+38424
 
 GTMOAuth2.xcodeproj
 dir
@@ -109,10 +109,10 @@ file
 
 
 
-2012-01-11T13:36:58.000000Z
-3e05c11cb524df85277ba335b1dc6575
-2011-10-10T21:53:11.160738Z
-63
+2012-08-20T23:32:50.000000Z
+13ea24557d5f981ec4c483f0e1ea2e3e
+2012-08-11T03:08:28.046869Z
+92
 grobbins@google.com
 
 
@@ -135,7 +135,7 @@ grobbins@google.com
 
 
 
-2312
+2878
 
 GTMOAuth2SignIn.h
 file
@@ -143,10 +143,10 @@ file
 
 
 
-2012-01-11T13:36:58.000000Z
-210b00ac5bfdd5e12c44b96ee4804a16
-2011-10-10T22:29:29.000010Z
-64
+2012-08-20T23:32:50.000000Z
+55318f1646339168ab6866383c8b5656
+2012-07-28T00:59:42.100910Z
+90
 grobbins@google.com
 
 
@@ -169,7 +169,7 @@ grobbins@google.com
 
 
 
-6093
+6464
 
 GTMOAuth2SignIn.m
 file
@@ -177,10 +177,10 @@ file
 
 
 
-2012-01-11T13:36:58.000000Z
-4668c744132b3793146aea945d83b2aa
-2011-12-12T16:50:57.957123Z
-76
+2012-08-20T23:32:50.000000Z
+ed507117b35675e14d63761ac5b6d992
+2012-07-28T00:59:42.100910Z
+90
 grobbins@google.com
 
 
@@ -203,5 +203,5 @@ grobbins@google.com
 
 
 
-27860
+28143
 

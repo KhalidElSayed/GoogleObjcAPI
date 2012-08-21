@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@
 // Documentation:
 //   http://code.google.com/apis/calendar/v3/using.html
 // Classes:
-//   GTLQueryCalendar (33 custom class methods, 27 custom properties)
+//   GTLQueryCalendar (32 custom class methods, 29 custom properties)
 
 #import "GTLQueryCalendar.h"
 
@@ -45,12 +45,12 @@
 
 @implementation GTLQueryCalendar
 
-@dynamic calendarExpansionMax, calendarId, destination, eventId, fields,
-         groupExpansionMax, iCalUID, items, maxAttendees, maxResults,
-         minAccessRole, orderBy, originalStart, pageToken, q, ruleId,
-         sendNotifications, setting, showDeleted, showHidden,
-         showHiddenInvitations, singleEvents, text, timeMax, timeMin, timeZone,
-         updatedMin;
+@dynamic alwaysIncludeEmail, calendarExpansionMax, calendarId, colorRgbFormat,
+         destination, eventId, fields, groupExpansionMax, iCalUID, items,
+         maxAttendees, maxResults, minAccessRole, orderBy, originalStart,
+         pageToken, q, ruleId, sendNotifications, setting, showDeleted,
+         showHidden, showHiddenInvitations, singleEvents, text, timeMax,
+         timeMin, timeZone, updatedMin;
 
 + (NSDictionary *)arrayPropertyToClassMap {
   NSDictionary *map =
@@ -382,16 +382,6 @@
   GTLQueryCalendar *query = [self queryWithMethodName:methodName];
   query.calendarId = calendarId;
   query.text = text;
-  query.expectedObjectClass = [GTLCalendarEvent class];
-  return query;
-}
-
-+ (id)queryForEventsResetWithCalendarId:(NSString *)calendarId
-                                eventId:(NSString *)eventId {
-  NSString *methodName = @"calendar.events.reset";
-  GTLQueryCalendar *query = [self queryWithMethodName:methodName];
-  query.calendarId = calendarId;
-  query.eventId = eventId;
   query.expectedObjectClass = [GTLCalendarEvent class];
   return query;
 }

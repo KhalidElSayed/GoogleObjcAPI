@@ -1,14 +1,14 @@
 10
 
 dir
-134
+201
 http://google-api-objectivec-client.googlecode.com/svn/trunk/Examples/LatitudeSample/LatitudeSample.xcodeproj
 http://google-api-objectivec-client.googlecode.com/svn
 
 
 
-2011-08-24T18:22:08.458369Z
-32
+2012-05-10T20:34:24.463283Z
+154
 grobbins@google.com
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-11T13:36:49.000000Z
-95e75f9e09b02ca5b0f16a2b326e8bc0
-2011-08-24T18:22:08.458369Z
-32
+2012-08-20T23:32:43.000000Z
+195e4cb81b2cc2d7b0408d8918f4757c
+2012-05-10T20:34:24.463283Z
+154
 grobbins@google.com
 
 
@@ -58,5 +58,5 @@ grobbins@google.com
 
 
 
-23315
+23069
 

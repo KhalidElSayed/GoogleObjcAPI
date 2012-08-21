@@ -1,14 +1,14 @@
 10
 
 dir
-134
+201
 http://google-api-objectivec-client.googlecode.com/svn/trunk/Source/Utilities
 http://google-api-objectivec-client.googlecode.com/svn
 
 
 
-2011-11-23T19:39:24.306488Z
-106
+2012-06-19T21:52:36.704909Z
+169
 grobbins@google.com
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2012-01-11T13:36:46.000000Z
+2012-08-20T23:32:42.000000Z
 541a2fa5fcb467e3d5ca2953a42132f6
 2011-06-24T20:24:16.908736Z
 14
@@ -66,7 +66,7 @@ file
 
 
 
-2012-01-11T13:36:46.000000Z
+2012-08-20T23:32:42.000000Z
 b070dd50303adde6ac2837f432ae579c
 2011-11-01T18:01:51.791318Z
 86
@@ -94,16 +94,16 @@ grobbins@google.com
 
 2926
 
-GTLJSONParser.h
+GTLBase64.h
 file
 
 
 
 
-2012-01-11T13:36:46.000000Z
-3dd2043dc80e91ca39eaad5affbe8c67
-2011-06-24T20:24:16.908736Z
-14
+2012-08-20T23:32:42.000000Z
+a844b7631577d1d0174d9441b7cc29b3
+2012-03-15T20:50:52.759408Z
+148
 grobbins@google.com
 
 
@@ -126,7 +126,75 @@ grobbins@google.com
 
 
 
-1156
+954
+
+GTLJSONParser.h
+file
+
+
+
+
+2012-08-20T23:32:42.000000Z
+c4417e24f00339a5f897bd4989b37fdc
+2012-04-25T22:24:38.768910Z
+152
+grobbins@google.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1284
+
+GTLBase64.m
+file
+
+
+
+
+2012-08-20T23:32:42.000000Z
+e498d33cc3091f61e1c986adea67665b
+2012-03-15T20:50:52.759408Z
+148
+grobbins@google.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4608
 
 GTLUtilities.h
 file
@@ -134,10 +202,10 @@ file
 
 
 
-2012-01-11T13:36:46.000000Z
-593ac2daab731888eff42b239b6f8918
-2011-10-17T20:15:49.654207Z
-79
+2012-08-20T23:32:42.000000Z
+d5a62e533b0bda5372f2ef952283c704
+2012-03-15T20:50:52.759408Z
+148
 grobbins@google.com
 
 
@@ -160,7 +228,7 @@ grobbins@google.com
 
 
 
-3733
+3424
 
 GTLJSONParser.m
 file
@@ -168,10 +236,10 @@ file
 
 
 
-2012-01-11T13:36:46.000000Z
-fc8aeed9ea4ee9ef850b7655120f7f46
-2011-06-24T20:24:16.908736Z
-14
+2012-08-20T23:32:42.000000Z
+6a99b5715c5833df75ad5056237640e9
+2012-04-25T22:24:38.768910Z
+152
 grobbins@google.com
 
 
@@ -194,7 +262,7 @@ grobbins@google.com
 
 
 
-5197
+5412
 
 GTLFramework.h
 file
@@ -202,7 +270,7 @@ file
 
 
 
-2012-01-11T13:36:46.000000Z
+2012-08-20T23:32:42.000000Z
 c8c6fffc2acae7e45f02c5149d43181b
 2011-06-24T20:24:16.908736Z
 14
@@ -236,10 +304,10 @@ file
 
 
 
-2012-01-11T13:36:46.000000Z
-c4bc6d58eec8cc15d70aa496b8812135
-2011-11-23T19:39:24.306488Z
-106
+2012-08-20T23:32:42.000000Z
+92e573572f216148a0290a381fa89fcd
+2012-06-19T21:52:36.704909Z
+169
 grobbins@google.com
 
 
@@ -262,5 +330,5 @@ grobbins@google.com
 
 
 
-16948
+12655
 

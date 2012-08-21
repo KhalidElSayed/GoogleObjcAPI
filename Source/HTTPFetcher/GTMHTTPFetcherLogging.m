@@ -13,15 +13,19 @@
  * limitations under the License.
  */
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-
 #if !STRIP_GTM_FETCH_LOGGING
 
 #include <sys/stat.h>
 #include <unistd.h>
 
 #import "GTMHTTPFetcherLogging.h"
+
+// Sensitive credential strings are replaced in logs with _snip_
+//
+// Apps that must see the contents of sensitive tokens can set this to 1
+#ifndef SKIP_GTM_FETCH_LOGGING_SNIPPING
+#define SKIP_GTM_FETCH_LOGGING_SNIPPING 0
+#endif
 
 // If GTMReadMonitorInputStream is available, it can be used for
 // capturing uploaded streams of data
@@ -36,10 +40,13 @@
 @end
 
 // If GTMNSJSONSerialization is available, it is used for formatting JSON
+#if (TARGET_OS_MAC && !TARGET_OS_IPHONE && (MAC_OS_X_VERSION_MAX_ALLOWED < 1070)) || \
+  (TARGET_OS_IPHONE && (__IPHONE_OS_VERSION_MAX_ALLOWED < 50000))
 @interface GTMNSJSONSerialization : NSObject
 + (NSData *)dataWithJSONObject:(id)obj options:(NSUInteger)opt error:(NSError **)error;
 + (id)JSONObjectWithData:(NSData *)data options:(NSUInteger)opt error:(NSError **)error;
 @end
+#endif
 
 // Otherwise, if SBJSON is available, it is used for formatting JSON
 @interface GTMFetcherSBJSON
@@ -48,7 +55,7 @@
 - (id)objectWithString:(NSString*)jsonrep error:(NSError**)error;
 @end
 
-@interface GTMHTTPFetcher ()
+@interface GTMHTTPFetcher (GTMHTTPFetcherLoggingUtilities)
 + (NSString *)headersStringForDictionary:(NSDictionary *)dict;
 
 - (void)inputStream:(GTMReadMonitorInputStream *)stream
@@ -62,9 +69,9 @@
 + (BOOL)createSymbolicLinkAtPath:(NSString *)newPath
              withDestinationPath:(NSString *)targetPath;
 
-+ (NSString *)snipSubtringOfString:(NSString *)originalStr
-                betweenStartString:(NSString *)startStr
-                         endString:(NSString *)endStr;
++ (NSString *)snipSubstringOfString:(NSString *)originalStr
+                 betweenStartString:(NSString *)startStr
+                          endString:(NSString *)endStr;
 
 + (id)JSONObjectWithData:(NSData *)data;
 + (id)stringWithJSONObject:(id)obj;
@@ -398,8 +405,23 @@ static NSString* gLoggingProcessName = nil;
   NSString *dirName = [NSString stringWithFormat:@"%@_log_%@",
                        processName, dateStamp];
   NSString *logDirectory = [parentDir stringByAppendingPathComponent:dirName];
-  if (gIsLoggingToFile && ![[self class] makeDirectoryUpToPath:logDirectory]) return;
 
+  if (gIsLoggingToFile) {
+    // be sure that the first time this app runs, it's not writing to
+    // a preexisting folder
+    static BOOL shouldReuseFolder = NO;
+    if (!shouldReuseFolder) {
+      shouldReuseFolder = YES;
+      NSString *origLogDir = logDirectory;
+      for (int ctr = 2; ctr < 20; ctr++) {
+        if (![[self class] fileOrDirExistsAtPath:logDirectory]) break;
+
+        // append a digit
+        logDirectory = [origLogDir stringByAppendingFormat:@"_%d", ctr];
+      }
+    }
+    if (![[self class] makeDirectoryUpToPath:logDirectory]) return;
+  }
   // each response's NSData goes into its own xml or txt file, though all
   // responses for this run of the app share a main html file.  This
   // counter tracks all fetch responses for this run of the app.
@@ -558,14 +580,13 @@ static NSString* gLoggingProcessName = nil;
     [outputHTML appendFormat:@"&nbsp;&nbsp; headers: %d  %@<br>",
      (int)numberOfRequestHeaders, headerDetails];
   } else {
-    [outputHTML appendFormat:@"&nbsp;&nbsp; headers: none<br>",
-     (int)numberOfRequestHeaders];
+    [outputHTML appendFormat:@"&nbsp;&nbsp; headers: none<br>"];
   }
 
   // write the request post data, toggleable
   NSData *postData;
   if (loggedStreamData_) {
-    postData = loggedStreamData_; 
+    postData = loggedStreamData_;
   } else if (postData_) {
     postData = postData_;
   } else {
@@ -584,18 +605,18 @@ static NSString* gLoggingProcessName = nil;
                                  contentType:postType];
     if (postDataStr) {
       // remove OAuth 2 client secret and refresh token
-      postDataStr = [[self class] snipSubtringOfString:postDataStr
-                                    betweenStartString:@"client_secret="
-                                             endString:@"&"];
+      postDataStr = [[self class] snipSubstringOfString:postDataStr
+                                     betweenStartString:@"client_secret="
+                                              endString:@"&"];
 
-      postDataStr = [[self class] snipSubtringOfString:postDataStr
-                                    betweenStartString:@"refresh_token="
-                                             endString:@"&"];
+      postDataStr = [[self class] snipSubstringOfString:postDataStr
+                                     betweenStartString:@"refresh_token="
+                                              endString:@"&"];
 
       // remove ClientLogin password
-      postDataStr = [[self class] snipSubtringOfString:postDataStr
-                                    betweenStartString:@"&Passwd="
-                                             endString:@"&"];
+      postDataStr = [[self class] snipSubstringOfString:postDataStr
+                                     betweenStartString:@"&Passwd="
+                                              endString:@"&"];
     }
   } else {
     // no post data
@@ -728,6 +749,19 @@ static NSString* gLoggingProcessName = nil;
     if (responseDataLength > 0) {
       if (responseDataStr != nil) {
         [copyable appendFormat:@"%@\n", responseDataStr];
+      } else if (status >= 400 && [temporaryDownloadPath_ length] > 0) {
+        // Try to read in the saved data, which is probably a server error
+        // message
+        NSStringEncoding enc;
+        responseDataStr = [NSString stringWithContentsOfFile:temporaryDownloadPath_
+                                                usedEncoding:&enc
+                                                       error:NULL];
+        if ([responseDataStr length] > 0) {
+          [copyable appendFormat:@"%@\n", responseDataStr];
+        } else {
+          [copyable appendFormat:@"<<%u bytes to file>>\n",
+           (unsigned int) responseDataLength];
+        }
       } else {
         // Even though it's redundant, we'll put in text to indicate that all
         // the bytes are binary
@@ -823,6 +857,10 @@ static NSString* gLoggingProcessName = nil;
   return YES;
 }
 
+@end
+
+@implementation GTMHTTPFetcher (GTMHTTPFetcherLoggingUtilities)
+
 - (void)inputStream:(GTMReadMonitorInputStream *)stream
      readIntoBuffer:(void *)buffer
              length:(NSUInteger)length {
@@ -869,12 +907,14 @@ static NSString* gLoggingProcessName = nil;
   return (result == 0);
 }
 
-#pragma mark Formatting utilities
+#pragma mark Fomatting Utilities
 
-+ (NSString *)snipSubtringOfString:(NSString *)originalStr
-                betweenStartString:(NSString *)startStr
-                         endString:(NSString *)endStr {
-
++ (NSString *)snipSubstringOfString:(NSString *)originalStr
+                 betweenStartString:(NSString *)startStr
+                          endString:(NSString *)endStr {
+#if SKIP_GTM_FETCH_LOGGING_SNIPPING
+  return originalStr;
+#else
   if (originalStr == nil) return nil;
 
   // Find the start string, and replace everything between it
@@ -903,6 +943,7 @@ static NSString* gLoggingProcessName = nil;
   NSString *result = [originalStr stringByReplacingCharactersInRange:replaceRange
                                                           withString:@"_snip_"];
   return result;
+#endif // SKIP_GTM_FETCH_LOGGING_SNIPPING
 }
 
 + (NSString *)headersStringForDictionary:(NSDictionary *)dict {
@@ -920,22 +961,22 @@ static NSString* gLoggingProcessName = nil;
     NSString *value = [dict valueForKey:key];
     if ([key isEqual:@"Authorization"]) {
       // Remove OAuth 1 token
-      value = [[self class] snipSubtringOfString:value
-                              betweenStartString:@"oauth_token=\""
-                                       endString:@"\""];
+      value = [[self class] snipSubstringOfString:value
+                               betweenStartString:@"oauth_token=\""
+                                        endString:@"\""];
 
       // Remove OAuth 2 bearer token (draft 16, and older form)
-      value = [[self class] snipSubtringOfString:value
-                              betweenStartString:@"Bearer "
-                                       endString:@"\n"];
-      value = [[self class] snipSubtringOfString:value
-                              betweenStartString:@"OAuth "
-                                       endString:@"\n"];
+      value = [[self class] snipSubstringOfString:value
+                               betweenStartString:@"Bearer "
+                                        endString:@"\n"];
+      value = [[self class] snipSubstringOfString:value
+                               betweenStartString:@"OAuth "
+                                        endString:@"\n"];
 
       // Remove Google ClientLogin
-      value = [[self class] snipSubtringOfString:value
-                              betweenStartString:@"GoogleLogin auth="
-                                       endString:@"\n"];
+      value = [[self class] snipSubstringOfString:value
+                               betweenStartString:@"GoogleLogin auth="
+                                        endString:@"\n"];
     }
     [str appendFormat:@"  %@: %@\n", key, value];
   }
@@ -999,10 +1040,6 @@ static NSString* gLoggingProcessName = nil;
   return nil;
 }
 
-
-#pragma clang diagnostic pop
-
 @end
 
 #endif // !STRIP_GTM_FETCH_LOGGING
-

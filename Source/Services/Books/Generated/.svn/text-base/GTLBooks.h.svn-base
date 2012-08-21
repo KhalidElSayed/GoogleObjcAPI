@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,17 +29,24 @@
 #import "GTLBooksConstants.h"
 
 #import "GTLBooksAnnotation.h"
+#import "GTLBooksAnnotationdata.h"
 #import "GTLBooksAnnotations.h"
+#import "GTLBooksAnnotationsdata.h"
 #import "GTLBooksAnnotationsRange.h"
 #import "GTLBooksBookshelf.h"
 #import "GTLBooksBookshelves.h"
 #import "GTLBooksConcurrentAccessRestriction.h"
 #import "GTLBooksDownloadAccesses.h"
 #import "GTLBooksDownloadAccessRestriction.h"
+#import "GTLBooksLayerGeoData.h"
+#import "GTLBooksLayersummaries.h"
+#import "GTLBooksLayersummary.h"
 #import "GTLBooksReadingPosition.h"
 #import "GTLBooksRequestAccess.h"
 #import "GTLBooksReview.h"
 #import "GTLBooksVolume.h"
+#import "GTLBooksVolumeannotation.h"
+#import "GTLBooksVolumeannotations.h"
 #import "GTLBooksVolumes.h"
 
 #import "GTLQueryBooks.h"

@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@
 // Documentation:
 //   http://code.google.com/apis/calendar/v3/using.html
 // Classes:
-//   GTLCalendarEventAttendee (0 custom class methods, 9 custom properties)
+//   GTLCalendarEventAttendee (0 custom class methods, 10 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -54,6 +54,10 @@
 // adding an attendee.
 @property (copy) NSString *email;
 
+// The attendee's Profile ID, if available.
+// identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
+@property (copy) NSString *identifier;
+
 // Whether this is an optional attendee. Optional. The default is False.
 @property (retain) NSNumber *optional;  // boolValue
 
@@ -73,7 +77,7 @@
 
 // Whether this entry represents the calendar on which this copy of the event
 // appears. Read-only. The default is False.
-// Remapped to 'selfProperty' to avoid the word 'self'.
+// Remapped to 'selfProperty' to avoid language reserved word 'self'.
 @property (retain) NSNumber *selfProperty;  // boolValue
 
 @end

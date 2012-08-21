@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 57
-/svn/!svn/ver/28/trunk/Examples/BooksSample/English.lproj
+V 58
+/svn/!svn/ver/153/trunk/Examples/BooksSample/English.lproj
 END
 InfoPlist.strings
 K 25
@@ -12,8 +12,8 @@ END
 BooksSampleWindow.xib
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/!svn/ver/23/trunk/Examples/BooksSample/English.lproj/BooksSampleWindow.xib
+V 80
+/svn/!svn/ver/153/trunk/Examples/BooksSample/English.lproj/BooksSampleWindow.xib
 END
 MainMenu.xib
 K 25

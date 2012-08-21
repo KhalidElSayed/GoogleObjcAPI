@@ -1,14 +1,14 @@
 10
 
 dir
-134
+201
 http://google-api-objectivec-client.googlecode.com/svn/trunk/Examples/TasksSample/TasksSample.xcodeproj
 http://google-api-objectivec-client.googlecode.com/svn
 
 
 
-2011-08-16T23:06:51.401103Z
-22
+2012-05-10T20:34:24.463283Z
+154
 grobbins@google.com
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-01-11T13:36:48.000000Z
-386570018fd4f7c1261e002166c0be45
-2011-08-16T23:06:51.401103Z
-22
+2012-08-20T23:32:43.000000Z
+016396ecc20f450619704d082bd73ba7
+2012-05-10T20:34:24.463283Z
+154
 grobbins@google.com
 
 
@@ -58,5 +58,5 @@ grobbins@google.com
 
 
 
-23895
+23649
 

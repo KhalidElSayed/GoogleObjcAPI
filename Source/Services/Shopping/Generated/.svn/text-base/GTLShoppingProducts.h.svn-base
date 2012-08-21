@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Google Inc.
+/* Copyright (c) 2012 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,18 +20,17 @@
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
-//   Search API for Shopping (shopping/v1)
+//   Search API For Shopping (shopping/v1)
 // Description:
-//   Lets you search over product data
+//   Lets you search over product data.
 // Documentation:
 //   http://code.google.com/apis/shopping/search/v1/getting_started.html
 // Classes:
 //   GTLShoppingProducts (0 custom class methods, 21 custom properties)
 //   GTLShoppingProductsFacetsItem (0 custom class methods, 7 custom properties)
-//   GTLShoppingProductsPromotionsItem (0 custom class methods, 9 custom properties)
-//   GTLShoppingProductsShelfSpaceAdsItem (0 custom class methods, 1 custom properties)
+//   GTLShoppingProductsPromotionsItem (0 custom class methods, 8 custom properties)
 //   GTLShoppingProductsSpelling (0 custom class methods, 1 custom properties)
-//   GTLShoppingProductsStoresItem (0 custom class methods, 6 custom properties)
+//   GTLShoppingProductsStoresItem (0 custom class methods, 7 custom properties)
 //   GTLShoppingProductsFacetsItemBucketsItem (0 custom class methods, 6 custom properties)
 //   GTLShoppingProductsPromotionsItemCustomFieldsItem (0 custom class methods, 2 custom properties)
 
@@ -44,12 +43,12 @@
 @class GTLShoppingModelCategory;
 @class GTLShoppingModelDebug;
 @class GTLShoppingModelProduct;
+@class GTLShoppingModelRecommendations;
 @class GTLShoppingProduct;
 @class GTLShoppingProductsFacetsItem;
 @class GTLShoppingProductsFacetsItemBucketsItem;
 @class GTLShoppingProductsPromotionsItem;
 @class GTLShoppingProductsPromotionsItemCustomFieldsItem;
-@class GTLShoppingProductsShelfSpaceAdsItem;
 @class GTLShoppingProductsSpelling;
 @class GTLShoppingProductsStoresItem;
 
@@ -65,6 +64,9 @@
 
 // List of categories.
 @property (retain) NSArray *categories;  // of GTLShoppingModelCategory
+
+// Recommendations for category.
+@property (retain) NSArray *categoryRecommendations;  // of GTLShoppingModelRecommendations
 
 // Current item count.
 @property (retain) NSNumber *currentItemCount;  // intValue
@@ -111,8 +113,6 @@
 
 // Self link of feed.
 @property (copy) NSString *selfLink;
-
-@property (retain) NSArray *shelfSpaceAds;  // of GTLShoppingProductsShelfSpaceAdsItem
 
 // Spelling.
 @property (retain) GTLShoppingProductsSpelling *spelling;
@@ -186,10 +186,6 @@
 // Link to promotion image (omitted if type is not standard).
 @property (copy) NSString *imageLink;
 
-// Link to promotion without scheme. DEPRECATED. WILL BE REMOVED SOON. USE
-// destLink.
-@property (copy) NSString *link;
-
 // Name of promotion (omitted if type is not standard).
 @property (copy) NSString *name;
 
@@ -199,16 +195,6 @@
 // Type of promotion (one of: standard, product, custom).
 @property (copy) NSString *type;
 
-@end
-
-
-// ----------------------------------------------------------------------------
-//
-//   GTLShoppingProductsShelfSpaceAdsItem
-//
-
-@interface GTLShoppingProductsShelfSpaceAdsItem : GTLObject
-@property (retain) GTLShoppingModelProduct *product;
 @end
 
 
@@ -238,7 +224,7 @@
 // Location of store.
 @property (copy) NSString *location;
 
-// Name of store.
+// Name of merchant.
 @property (copy) NSString *name;
 
 // Merchant-supplied store code.
@@ -246,6 +232,9 @@
 
 // Id of store.
 @property (copy) NSString *storeId;
+
+// Name of store.
+@property (copy) NSString *storeName;
 
 // Telephone number of store.
 @property (copy) NSString *telephone;
