@@ -30,7 +30,7 @@
 #import "GTMOAuth2SignIn.h"
 #import "GTMOAuth2Authentication.h"
 
-static NSString * const kGTMOAuth2AccountName = @"OAuth";
+//static NSString * const kGTMOAuth2AccountName = @"OAuth";
 static GTMOAuth2Keychain* sDefaultKeychain = nil;
 
 @interface GTMOAuth2ViewControllerTouch()
@@ -264,9 +264,7 @@ finishedWithAuth:(GTMOAuth2Authentication *)auth
 }
 
 #if !GTM_OAUTH2_SKIP_GOOGLE_SUPPORT
-+ (GTMOAuth2Authentication *)authForGoogleFromKeychainForName:(NSString *)keychainItemName
-                                                     clientID:(NSString *)clientID
-                                                 clientSecret:(NSString *)clientSecret {
++ (GTMOAuth2Authentication *)authForGoogleFromKeychainForName:(NSString *)keychainItemName clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret accountEmail:(NSString *)accountEmail {
   Class signInClass = [self signInClass];
   NSURL *tokenURL = [signInClass googleTokenURL];
   NSString *redirectURI = [signInClass nativeClientRedirectURI];
@@ -277,20 +275,18 @@ finishedWithAuth:(GTMOAuth2Authentication *)auth
                                                         redirectURI:redirectURI
                                                            clientID:clientID
                                                        clientSecret:clientSecret];
-  [[self class] authorizeFromKeychainForName:keychainItemName
-                              authentication:auth];
+  [[self class] authorizeFromKeychainForName:keychainItemName authentication:auth accountEmail:accountEmail];
   return auth;
 }
 #endif
 
-+ (BOOL)authorizeFromKeychainForName:(NSString *)keychainItemName
-                      authentication:(GTMOAuth2Authentication *)newAuth {
++ (BOOL)authorizeFromKeychainForName:(NSString *)keychainItemName authentication:(GTMOAuth2Authentication *)newAuth accountEmail:(NSString *)accountEmail {
   newAuth.accessToken = nil;
 
   BOOL didGetTokens = NO;
   GTMOAuth2Keychain *keychain = [GTMOAuth2Keychain defaultKeychain];
   NSString *password = [keychain passwordForService:keychainItemName
-                                            account:kGTMOAuth2AccountName
+                                            account:accountEmail
                                               error:nil];
   if (password != nil) {
     [newAuth setKeysForResponseString:password];
@@ -299,24 +295,15 @@ finishedWithAuth:(GTMOAuth2Authentication *)auth
   return didGetTokens;
 }
 
-+ (BOOL)removeAuthFromKeychainForName:(NSString *)keychainItemName {
++ (BOOL)removeAuthFromKeychainForName:(NSString *)keychainItemName accountEmail:(NSString *)accountEmail {
   GTMOAuth2Keychain *keychain = [GTMOAuth2Keychain defaultKeychain];
   return [keychain removePasswordForService:keychainItemName
-                                    account:kGTMOAuth2AccountName
+                                    account:accountEmail
                                       error:nil];
 }
 
-+ (BOOL)saveParamsToKeychainForName:(NSString *)keychainItemName
-                     authentication:(GTMOAuth2Authentication *)auth {
-  return [self saveParamsToKeychainForName:keychainItemName
-                             accessibility:NULL
-                            authentication:auth];
-}
-
-+ (BOOL)saveParamsToKeychainForName:(NSString *)keychainItemName
-                      accessibility:(CFTypeRef)accessibility
-                     authentication:(GTMOAuth2Authentication *)auth {
-  [self removeAuthFromKeychainForName:keychainItemName];
++ (BOOL)saveParamsToKeychainForName:(NSString *)keychainItemName accessibility:(CFTypeRef)accessibility authentication:(GTMOAuth2Authentication *)auth accountEmail:(NSString *)accountEmail {
+  [self removeAuthFromKeychainForName:keychainItemName accountEmail:accountEmail];
   // don't save unless we have a token that can really authorize requests
   if (![auth canAuthorize]) return NO;
 
@@ -331,7 +318,7 @@ finishedWithAuth:(GTMOAuth2Authentication *)auth
   return [keychain setPassword:password
                     forService:keychainItemName
                  accessibility:accessibility
-                       account:kGTMOAuth2AccountName
+                       account:accountEmail
                          error:nil];
 }
 
@@ -588,18 +575,18 @@ static Class gSignInClass = Nil;
   if (!hasCalledFinished_) {
     hasCalledFinished_ = YES;
 
+    NSString *email = [auth.parameters objectForKey:@"email"];
+
     if (error == nil) {
       if (self.shouldUseKeychain) {
         NSString *keychainItemName = self.keychainItemName;
         if (auth.canAuthorize) {
           // save the auth params in the keychain
           CFTypeRef accessibility = self.keychainItemAccessibility;
-          [[self class] saveParamsToKeychainForName:keychainItemName
-                                      accessibility:accessibility
-                                     authentication:auth];
+            [[self class] saveParamsToKeychainForName:keychainItemName accessibility:accessibility authentication:auth accountEmail:email];
         } else {
           // remove the auth params from the keychain
-          [[self class] removeAuthFromKeychainForName:keychainItemName];
+          [[self class] removeAuthFromKeychainForName:keychainItemName accountEmail:email];
         }
       }
     }

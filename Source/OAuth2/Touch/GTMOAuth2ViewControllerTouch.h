@@ -277,29 +277,14 @@ _EXTERN NSString* const kGTMOAuth2KeychainErrorDomain       _INITIALIZE_AS(@"com
 // token and secret stored in the keychain; if no token is available, return
 // an unauthorized auth object
 #if !GTM_OAUTH2_SKIP_GOOGLE_SUPPORT
-+ (GTMOAuth2Authentication *)authForGoogleFromKeychainForName:(NSString *)keychainItemName
-                                                     clientID:(NSString *)clientID
-                                                 clientSecret:(NSString *)clientSecret;
++ (GTMOAuth2Authentication *)authForGoogleFromKeychainForName:(NSString *)keychainItemName clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret accountEmail:(NSString *)accountEmail;
 #endif
 
-// add tokens from the keychain, if available, to the authentication object
-//
-// returns YES if the authentication object was authorized from the keychain
-+ (BOOL)authorizeFromKeychainForName:(NSString *)keychainItemName
-                      authentication:(GTMOAuth2Authentication *)auth;
++ (BOOL)authorizeFromKeychainForName:(NSString *)keychainItemName authentication:(GTMOAuth2Authentication *)newAuth accountEmail:(NSString *)accountEmail;
 
-// method for deleting the stored access token and secret, useful for "signing
-// out"
-+ (BOOL)removeAuthFromKeychainForName:(NSString *)keychainItemName;
++ (BOOL)removeAuthFromKeychainForName:(NSString *)keychainItemName accountEmail:(NSString *)accountEmail;
 
-// method for saving the stored access token and secret
-+ (BOOL)saveParamsToKeychainForName:(NSString *)keychainItemName
-                      accessibility:(CFTypeRef)accessibility
-                     authentication:(GTMOAuth2Authentication *)auth;
-
-// older version, defaults to kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
-+ (BOOL)saveParamsToKeychainForName:(NSString *)keychainItemName
-                     authentication:(GTMOAuth2Authentication *)auth;
++ (BOOL)saveParamsToKeychainForName:(NSString *)keychainItemName accessibility:(CFTypeRef)accessibility authentication:(GTMOAuth2Authentication *)auth accountEmail:(NSString *)accountEmail;
 
 @end
 

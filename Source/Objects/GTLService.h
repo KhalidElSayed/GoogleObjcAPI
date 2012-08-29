@@ -76,6 +76,7 @@ _EXTERN NSString* const kGTLServiceTicketParsingStartedNotification _INITIALIZE_
 _EXTERN NSString* const kGTLServiceTicketParsingStoppedNotification _INITIALIZE_AS(@"kGTLServiceTicketParsingStoppedNotification");
 
 @class GTLServiceTicket;
+@class GTMOAuth2Authentication;
 
 // Block types used for fetch callbacks
 //
